@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   FaIcon(FontAwesomeIcons.fire, size: 40, color: Colors.orange),
                   SizedBox(width: 10),
                   Text(
-                    'Ana Sayfa',
+                    'Lirica',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

@@ -15,6 +15,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Aşk',
               description: 'Aşk sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/heart.png',
+              color: Colors.teal,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -28,6 +29,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Motivasyon',
               description: 'Motivasyon sözlerini görüntülemek içi tıklayın',
               icon: 'assets/icons/motivation.png',
+              color: Colors.teal,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -42,6 +44,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Duygusal',
               description: 'Motivasyon sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/depression.png',
+              color: Colors.teal,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -56,12 +59,28 @@ class SozlerScreen extends StatelessWidget {
               title: 'Komik',
               description: 'Komik sözleri görüntülemek için tıklayın',
               icon: 'assets/icons/lol.png',
+              color: Colors.teal,
               onfunction: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        SozlerDetailScreen(category: 'Duygusal'),
+                        SozlerDetailScreen(category: 'Komik'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Felsefe',
+              description: 'Felsefik sözleri görüntülemek için tıklayın',
+              icon: 'assets/icons/philosophy.png',
+              color: Colors.teal,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SozlerDetailScreen(category: 'Felsefe'),
                   ),
                 );
               },
@@ -78,12 +97,14 @@ class KategoriContainer extends StatelessWidget {
   final String description;
   final VoidCallback onfunction;
   final String icon;
+  final Color color;
   const KategoriContainer({
     super.key,
     required this.title,
     required this.onfunction,
     required this.icon,
     required this.description,
+    required this.color
   });
 
   @override
@@ -113,7 +134,7 @@ class KategoriContainer extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.teal,
+                    color:color
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

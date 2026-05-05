@@ -12,4 +12,10 @@ List<Sozler> sozler = [
     author: 'Bertolt Brecht',
     kategori: 'Motivasyon',
   ),
+  Sozler(
+    text:
+        'İyi insanlar kırıldıkları zaman sevmeyi bırakmazlar göstermeyi bırakırlar.',
+    author: 'Halikarnaas Balıkçısı',
+    kategori: 'Duygusal',
+  ),
 ];
