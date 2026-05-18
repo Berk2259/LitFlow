@@ -27,15 +27,91 @@ class SiirlerScreen extends StatelessWidget {
               },
             ),
             KategoriContainer(
-              title: 'Duygusal',
-              icon: 'assets/icons/depression.png',
-              description: 'Duygusal Şiirlerini görüntülemek için tıklayın',
+              title: 'Ayrılık',
+              icon: 'assets/icons/broken.png',
+              description: 'Ayrılık Şiirlerini görüntülemek için tıklayın',
               color: Colors.indigo,
               onfunction: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SiirlerDetailScreen(category: 'Duygusal'),
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Ayrılık'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Özlem',
+              icon: 'assets/icons/dove.png',
+              description: 'Özlem Şiirlerini görüntülemek için tıklayın',
+              color: Colors.indigo,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Özlem'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Hüzün',
+              icon: 'assets/icons/depression.png',
+              description: 'Hüzün Şiirlerini görüntülemek için tıklayın',
+              color: Colors.indigo,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Hüzün'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Dostluk',
+              icon: 'assets/icons/friend.png',
+              description: 'Dostluk Şiirlerini görüntülemek için tıklayın',
+              color: Colors.indigo,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Dostluk'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Doğa',
+              icon: 'assets/icons/nature.png',
+              description: 'Doğa Şiirlerini görüntülemek için tıklayın',
+              color: Colors.indigo,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Doğa'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Umut',
+              icon: 'assets/icons/hope.png',
+              description: 'Umut Şiirlerini görüntülemek için tıklayın',
+              color: Colors.indigo,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SiirlerDetailScreen(category: 'Umut'),
                   ),
                 );
               },

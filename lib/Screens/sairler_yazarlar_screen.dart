@@ -14,13 +14,19 @@ class SairlerYazarlarScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Türk Edebiyatı',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    Image.asset('assets/icons/book.png', scale: 12,color: Colors.redAccent,),
+                    SizedBox(width: 10),
+                    Text(
+                      'Türk Edebiyatı',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 SairlerYazarlarContainer(title: 'Nazım Hikmet'),
                 SairlerYazarlarContainer(title: 'Orhan Pamuk'),
@@ -30,13 +36,19 @@ class SairlerYazarlarScreen extends StatelessWidget {
                 SairlerYazarlarContainer(title: 'Orhan Veli Kanık'),
                 SairlerYazarlarContainer(title: 'Sabahattin Ali'),
                 SairlerYazarlarContainer(title: 'Halit Ziya Uşaklıgil'),
-                Text(
-                  'Dünya Edebiyatı',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    Image.asset('assets/icons/book.png', scale: 12,color: Colors.redAccent,),
+                    SizedBox(width: 10),
+                    Text(
+                      'Dünya Edebiyatı',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 SairlerYazarlarContainer(title: 'William Shakespeare'),
                 SairlerYazarlarContainer(title: 'Fyodor Dostoevsky'),

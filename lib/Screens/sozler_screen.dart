@@ -85,6 +85,36 @@ class SozlerScreen extends StatelessWidget {
                 );
               },
             ),
+            KategoriContainer(
+              title: 'Dostluk',
+              description: 'Dostluk sözlerini görüntülemek için tıklayın',
+              icon: 'assets/icons/friend.png',
+              color: Colors.teal,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SozlerDetailScreen(category: 'Dostluk'),
+                  ),
+                );
+              },
+            ),
+            KategoriContainer(
+              title: 'Film',
+              description: 'Film sözlerini görüntülemek için tıklayın',
+              icon: 'assets/icons/film.png',
+              color: Colors.teal,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SozlerDetailScreen(category: 'Film'),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

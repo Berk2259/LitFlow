@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 title: 'Edebi Sözler',
                 description: 'Edebi Sözleri görüntülemek için tıklayın',
                 iconColor: Colors.teal,
-                icon: 'assets/icons/feather.png',
+                icon: 'assets/icons/soz.png',
                 onfunction: () {
                   Navigator.push(
                     context,
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                 title: 'Şiirler',
                 description: 'Şiirleri görüntülemek için tıklayın',
                 iconColor: Colors.indigo,
-                icon: 'assets/icons/poem.png',
+                icon: 'assets/icons/poetry.png',
                 onfunction: () {
                   Navigator.push(
                     context,
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                 title: 'Şairler ve Yazarlar',
                 description: 'Şairleri ve Yazarları görüntülemek için tıklayın',
                 iconColor: Colors.redAccent,
-                icon: 'assets/icons/person.png',
+                icon: 'assets/icons/poet.png',
                 onfunction: () {
                   Navigator.push(
                     context,
@@ -74,6 +74,44 @@ class HomeScreen extends StatelessWidget {
                 description: 'Hikayeleri görüntülemek için tıklayın',
                 iconColor: Colors.brown,
                 icon: 'assets/icons/story.png',
+                onfunction: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
+                  );
+                },
+              ),
+              HomeContainer(
+                title: 'Kitaplar',
+                description: 'Hikayeleri görüntülemek için tıklayın',
+                iconColor: Colors.orange,
+                icon: 'assets/icons/bookshelf.png',
+                onfunction: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
+                  );
+                },
+              ),
+              HomeContainer(
+                title: 'Deyimler ve Atasözleri',
+                description:
+                    'Deyimler ve Atasözlerini görüntülemek için tıklayın',
+                iconColor: Colors.deepPurpleAccent,
+                icon: 'assets/icons/write.png',
+                onfunction: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
+                  );
+                },
+              ),
+              HomeContainer(
+                title: 'Favoriler',
+                description:
+                    'Favoriye Alınanları görüntülemek için tıklayın',
+                iconColor: Colors.tealAccent,
+                icon: 'assets/icons/heart.png',
                 onfunction: () {
                   Navigator.push(
                     context,
@@ -135,7 +173,7 @@ class HomeContainer extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(icon, scale: 12, color: Colors.white),
+                    child: Image.asset(icon, scale: 12),
                   ),
                 ),
                 Expanded(

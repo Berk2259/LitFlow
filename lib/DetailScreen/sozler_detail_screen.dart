@@ -58,13 +58,11 @@ class SozlerDetailScreen extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Column(
-                           
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
                                       ozlu_sozler.text,
                                       textAlign: TextAlign.center,
-
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
@@ -72,11 +70,10 @@ class SozlerDetailScreen extends StatelessWidget {
                                     ),
                                     Text(
                                       textAlign: TextAlign.center,
-                                      '- ${ozlu_sozler.author} -',                                    
+                                      '- ${ozlu_sozler.author} -',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 14,
-                                        
                                       ),
                                     ),
                                   ],
