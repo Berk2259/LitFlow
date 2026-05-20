@@ -12,114 +12,133 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey.shade800,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  FaIcon(FontAwesomeIcons.fire, size: 40, color: Colors.orange),
-                  SizedBox(width: 10),
-                  Text(
-                    'Lirica',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 16.0,
+              bottom: 16.0,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.fire,
+                      size: 40,
+                      color: Colors.orange,
                     ),
-                  ),
-                ],
-              ),
-              Divider(),
-              HomeContainer(
-                title: 'Edebi Sözler',
-                description: 'Edebi Sözleri görüntülemek için tıklayın',
-                iconColor: Colors.teal,
-                icon: 'assets/icons/soz.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SozlerScreen()),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Şiirler',
-                description: 'Şiirleri görüntülemek için tıklayın',
-                iconColor: Colors.indigo,
-                icon: 'assets/icons/poetry.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SiirlerScreen()),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Şairler ve Yazarlar',
-                description: 'Şairleri ve Yazarları görüntülemek için tıklayın',
-                iconColor: Colors.redAccent,
-                icon: 'assets/icons/poet.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SairlerYazarlarScreen(),
+                    SizedBox(width: 10),
+                    Text(
+                      'Lirica',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Hikayeler',
-                description: 'Hikayeleri görüntülemek için tıklayın',
-                iconColor: Colors.brown,
-                icon: 'assets/icons/story.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Kitaplar',
-                description: 'Hikayeleri görüntülemek için tıklayın',
-                iconColor: Colors.orange,
-                icon: 'assets/icons/bookshelf.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Deyimler ve Atasözleri',
-                description:
-                    'Deyimler ve Atasözlerini görüntülemek için tıklayın',
-                iconColor: Colors.deepPurpleAccent,
-                icon: 'assets/icons/write.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
-                  );
-                },
-              ),
-              HomeContainer(
-                title: 'Favoriler',
-                description:
-                    'Favoriye Alınanları görüntülemek için tıklayın',
-                iconColor: Colors.tealAccent,
-                icon: 'assets/icons/heart.png',
-                onfunction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HikayelerScreen()),
-                  );
-                },
-              ),
-            ],
+                  ],
+                ),
+                Divider(),
+                HomeContainer(
+                  title: 'Edebi Sözler',
+                  description: 'Edebi Sözleri görüntülemek için tıklayın',
+                  iconColor: Colors.teal,
+                  icon: 'assets/icons/soz.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SozlerScreen()),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Şiirler',
+                  description: 'Şiirleri görüntülemek için tıklayın',
+                  iconColor: Colors.indigo,
+                  icon: 'assets/icons/poetry.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SiirlerScreen()),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Şairler ve Yazarlar',
+                  description:
+                      'Şairleri ve Yazarları görüntülemek için tıklayın',
+                  iconColor: Colors.redAccent,
+                  icon: 'assets/icons/poet.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SairlerYazarlarScreen(),
+                      ),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Hikayeler',
+                  description: 'Hikayeleri görüntülemek için tıklayın',
+                  iconColor: Colors.brown,
+                  icon: 'assets/icons/story.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HikayelerScreen(),
+                      ),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Kitaplar',
+                  description: 'Hikayeleri görüntülemek için tıklayın',
+                  iconColor: Colors.orange,
+                  icon: 'assets/icons/bookshelf.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HikayelerScreen(),
+                      ),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Deyimler ve Atasözleri',
+                  description:
+                      'Deyimler ve Atasözlerini görüntülemek için tıklayın',
+                  iconColor: Colors.deepPurpleAccent,
+                  icon: 'assets/icons/write.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HikayelerScreen(),
+                      ),
+                    );
+                  },
+                ),
+                HomeContainer(
+                  title: 'Favoriler',
+                  description: 'Favoriye Alınanları görüntülemek için tıklayın',
+                  iconColor: Colors.tealAccent,
+                  icon: 'assets/icons/heart.png',
+                  onfunction: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HikayelerScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

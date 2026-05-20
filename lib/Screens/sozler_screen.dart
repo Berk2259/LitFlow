@@ -64,8 +64,7 @@ class SozlerScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        SozlerDetailScreen(category: 'Komik'),
+                    builder: (context) => SozlerDetailScreen(category: 'Komik'),
                   ),
                 );
               },
@@ -109,8 +108,7 @@ class SozlerScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        SozlerDetailScreen(category: 'Film'),
+                    builder: (context) => SozlerDetailScreen(category: 'Film'),
                   ),
                 );
               },
@@ -134,7 +132,7 @@ class KategoriContainer extends StatelessWidget {
     required this.onfunction,
     required this.icon,
     required this.description,
-    required this.color
+    required this.color,
   });
 
   @override
@@ -164,7 +162,7 @@ class KategoriContainer extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color:color
+                    color: color,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

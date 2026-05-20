@@ -22,7 +22,7 @@ class SozlerDetailScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: double.infinity,
-                      height: 130,
+
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.blueGrey.shade900,

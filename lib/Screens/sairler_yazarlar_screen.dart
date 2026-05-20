@@ -16,7 +16,11 @@ class SairlerYazarlarScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset('assets/icons/book.png', scale: 12,color: Colors.redAccent,),
+                    Image.asset(
+                      'assets/icons/book.png',
+                      scale: 12,
+                      color: Colors.redAccent,
+                    ),
                     SizedBox(width: 10),
                     Text(
                       'Türk Edebiyatı',
@@ -38,7 +42,11 @@ class SairlerYazarlarScreen extends StatelessWidget {
                 SairlerYazarlarContainer(title: 'Halit Ziya Uşaklıgil'),
                 Row(
                   children: [
-                    Image.asset('assets/icons/book.png', scale: 12,color: Colors.redAccent,),
+                    Image.asset(
+                      'assets/icons/book.png',
+                      scale: 12,
+                      color: Colors.redAccent,
+                    ),
                     SizedBox(width: 10),
                     Text(
                       'Dünya Edebiyatı',
@@ -94,11 +102,7 @@ class SairlerYazarlarContainer extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'assets/icons/person.png',
-                    scale: 15,
-                    color: Colors.white,
-                  ),
+                  child: Image.asset('assets/icons/poet.png', scale: 15),
                 ),
               ),
               SizedBox(width: 10),
