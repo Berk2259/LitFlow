@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lirica/Screens/screens.dart';
-import 'package:lirica/Screens/siirler_screen.dart';
-import 'package:lirica/Screens/sozler_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -103,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HikayelerScreen(),
+                        builder: (context) => BookScreen(),
                       ),
                     );
                   },
