@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lirica/Screens/screens.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade800,
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -20,6 +19,7 @@ class HomeScreen extends StatelessWidget {
               bottom: 16.0,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -40,10 +40,89 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 Divider(),
+                /*  Padding(
+                  padding: const EdgeInsets.only(left: 8.0, top: 10.0),
+                  child: Text(
+                    'Edebiyat, şiir ve daha fazlası',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+ */
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 8.0,
+                    right: 8.0,
+                    top: 10.0,
+                  ),
+                  child: TextField(
+                    onChanged: (query) {},
+                    decoration: InputDecoration(
+                      hintText: 'Ara...',
+                      hintStyle: TextStyle(color: Colors.grey.shade800),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.grey.shade800,
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFF2A2A2A),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                  child: Text(
+                    'Öne Çıkanlar',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      PopularContainer(
+                        title: 'Edebi Sözler',
+                        description: 'Özlü Sözler',
+                        icon: 'assets/icons/soz.png',
+                        iconColor: Color(0xFFFF8A8A),
+                      ),
+                      PopularContainer(
+                        title: 'Şiirler',
+                        description: 'Şiir Arşivi',
+                        icon: 'assets/icons/poetry.png',
+                        iconColor: Color(0xFFFFE066),
+                      ),
+                      PopularContainer(
+                        title: 'Kitaplar',
+                        description: 'Kitap Listesi',
+                        icon: 'assets/icons/bookshelf.png',
+                        iconColor: Color(0xFFB895FF),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                  child: Text(
+                    'Kategoriler',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 HomeContainer(
                   title: 'Edebi Sözler',
                   description: 'Edebi Sözleri görüntülemek için tıklayın',
-                  iconColor: Colors.teal,
+                  iconColor: Color(0xFFFF8A8A),
                   icon: 'assets/icons/soz.png',
                   onfunction: () {
                     Navigator.push(
@@ -55,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                 HomeContainer(
                   title: 'Şiirler',
                   description: 'Şiirleri görüntülemek için tıklayın',
-                  iconColor: Colors.indigo,
+                  iconColor: Color(0xFFFFE066),
                   icon: 'assets/icons/poetry.png',
                   onfunction: () {
                     Navigator.push(
@@ -68,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                   title: 'Şairler ve Yazarlar',
                   description:
                       'Şairleri ve Yazarları görüntülemek için tıklayın',
-                  iconColor: Colors.redAccent,
+                  iconColor: Color(0xFF8FDD9C),
                   icon: 'assets/icons/poet.png',
                   onfunction: () {
                     Navigator.push(
@@ -82,7 +161,7 @@ class HomeScreen extends StatelessWidget {
                 HomeContainer(
                   title: 'Hikayeler',
                   description: 'Hikayeleri görüntülemek için tıklayın',
-                  iconColor: Colors.brown,
+                  iconColor: Color(0xFF7DB3FF),
                   icon: 'assets/icons/story.png',
                   onfunction: () {
                     Navigator.push(
@@ -96,14 +175,12 @@ class HomeScreen extends StatelessWidget {
                 HomeContainer(
                   title: 'Kitaplar',
                   description: 'Hikayeleri görüntülemek için tıklayın',
-                  iconColor: Colors.orange,
+                  iconColor: Color(0xFFB895FF),
                   icon: 'assets/icons/bookshelf.png',
                   onfunction: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => BookScreen(),
-                      ),
+                      MaterialPageRoute(builder: (context) => BookScreen()),
                     );
                   },
                 ),
@@ -111,21 +188,19 @@ class HomeScreen extends StatelessWidget {
                   title: 'Deyimler ve Atasözleri',
                   description:
                       'Deyimler ve Atasözlerini görüntülemek için tıklayın',
-                  iconColor: Colors.deepPurpleAccent,
+                  iconColor: Color(0xFFFF5599),
                   icon: 'assets/icons/write.png',
                   onfunction: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => ProverbsScreen(),
-                      ),
+                      MaterialPageRoute(builder: (context) => ProverbsScreen()),
                     );
                   },
                 ),
                 HomeContainer(
                   title: 'Favoriler',
                   description: 'Favoriye Alınanları görüntülemek için tıklayın',
-                  iconColor: Colors.tealAccent,
+                  iconColor: Color(0xFF66E6FF),
                   icon: 'assets/icons/heart.png',
                   onfunction: () {
                     Navigator.push(
@@ -138,6 +213,61 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class PopularContainer extends StatelessWidget {
+  final String title;
+  final String icon;
+  final Color iconColor;
+  final String description;
+  const PopularContainer({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.iconColor,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.4,
+        height: MediaQuery.of(context).size.height * 0.15,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Color(0xFF2A2A2A),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: iconColor,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(icon, scale: 18),
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(title, style: TextStyle(color: Colors.white, fontSize: 16)),
+              SizedBox(height: 2),
+              Text(
+                description,
+                style: TextStyle(color: Colors.white38, fontSize: 12),
+              ),
+            ],
           ),
         ),
       ),
@@ -168,10 +298,11 @@ class HomeContainer extends StatelessWidget {
         onTap: onfunction,
         child: Container(
           width: double.infinity,
-          height: 100,
+          height: 70,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.black,
+            color: Color(0xFF2A2A2A),
+
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -186,12 +317,12 @@ class HomeContainer extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: iconColor,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(icon, scale: 12),
+                    child: Image.asset(icon, scale: 18),
                   ),
                 ),
                 Expanded(
@@ -203,14 +334,23 @@ class HomeContainer extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: TextStyle(fontSize: 22, color: iconColor),
+                          style: TextStyle(fontSize: 18, color: iconColor),
                         ),
                         Text(
                           description,
-                          style: TextStyle(fontSize: 15, color: Colors.white),
+                          style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                       ],
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.arrow_circle_right_outlined, color: iconColor),
+                    ],
                   ),
                 ),
               ],
