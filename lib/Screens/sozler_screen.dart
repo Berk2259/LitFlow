@@ -7,7 +7,7 @@ class SozlerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade800,
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
           children: [
@@ -15,7 +15,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Aşk',
               description: 'Aşk sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/heart.png',
-              color: Colors.teal,
+              color: Color(0xFFFF8A8A),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -29,7 +29,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Motivasyon',
               description: 'Motivasyon sözlerini görüntülemek içi tıklayın',
               icon: 'assets/icons/motivation.png',
-              color: Colors.teal,
+              color: Color(0xFFFFC107),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -44,7 +44,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Duygusal',
               description: 'Motivasyon sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/depression.png',
-              color: Colors.teal,
+              color: Color(0xFFB895FF),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -59,7 +59,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Komik',
               description: 'Komik sözleri görüntülemek için tıklayın',
               icon: 'assets/icons/lol.png',
-              color: Colors.teal,
+              color: Color(0xFF8FDD9C),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -73,7 +73,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Felsefe',
               description: 'Felsefik sözleri görüntülemek için tıklayın',
               icon: 'assets/icons/philosophy.png',
-              color: Colors.teal,
+              color: Color(0xFF7DB3FF),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -88,7 +88,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Dostluk',
               description: 'Dostluk sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/friend.png',
-              color: Colors.teal,
+              color: Color(0xFFB895FF),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -103,7 +103,7 @@ class SozlerScreen extends StatelessWidget {
               title: 'Film',
               description: 'Film sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/film.png',
-              color: Colors.teal,
+              color: Color(0xFFFF5599),
               onfunction: () {
                 Navigator.push(
                   context,
@@ -143,10 +143,10 @@ class KategoriContainer extends StatelessWidget {
         onTap: onfunction,
         child: Container(
           width: double.infinity,
-          height: 100,
+          height: 75,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.black,
+            color: Color(0xFF2A2A2A),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -161,12 +161,12 @@ class KategoriContainer extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: color,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(icon, scale: 12, color: Colors.white),
+                    child: Image.asset(icon, scale: 18, color: Colors.white),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -177,11 +177,18 @@ class KategoriContainer extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
-                      Text(description, style: TextStyle(color: Colors.white)),
+                      Text(
+                        description,
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
                     ],
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Icon(Icons.arrow_circle_right_outlined, color: color),
                 ),
               ],
             ),
