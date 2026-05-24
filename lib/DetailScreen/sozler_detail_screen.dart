@@ -29,6 +29,7 @@ class SozlerDetailScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 16.0),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         category,

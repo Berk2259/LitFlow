@@ -8,7 +8,7 @@ class SiirlerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade800,
+       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
           children: [
@@ -16,7 +16,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Aşk',
               icon: 'assets/icons/heart.png',
               description: 'Aşk Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.red.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -30,7 +30,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Ayrılık',
               icon: 'assets/icons/broken.png',
               description: 'Ayrılık Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.teal.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -45,7 +45,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Özlem',
               icon: 'assets/icons/dove.png',
               description: 'Özlem Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.pink.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -60,7 +60,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Hüzün',
               icon: 'assets/icons/depression.png',
               description: 'Hüzün Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.blue.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -75,7 +75,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Dostluk',
               icon: 'assets/icons/friend.png',
               description: 'Dostluk Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.amber.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -90,7 +90,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Doğa',
               icon: 'assets/icons/nature.png',
               description: 'Doğa Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.green.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
@@ -105,7 +105,7 @@ class SiirlerScreen extends StatelessWidget {
               title: 'Umut',
               icon: 'assets/icons/hope.png',
               description: 'Umut Şiirlerini görüntülemek için tıklayın',
-              color: Colors.indigo,
+              color: Colors.purple.shade300,
               onfunction: () {
                 Navigator.push(
                   context,
