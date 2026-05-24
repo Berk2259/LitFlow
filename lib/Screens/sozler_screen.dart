@@ -113,6 +113,20 @@ class SozlerScreen extends StatelessWidget {
                 );
               },
             ),
+             KategoriContainer(
+              title: 'Tarih',
+              description: 'Tarih sözlerini görüntülemek için tıklayın',
+              icon: 'assets/icons/ancient.png',
+              color: Colors.teal.shade300,
+              onfunction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SozlerDetailScreen(category: 'Tarih'),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
