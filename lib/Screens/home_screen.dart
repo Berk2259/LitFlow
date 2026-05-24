@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lirica/Screens/screens.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +62,18 @@ class HomeScreen extends StatelessWidget {
                     top: 10.0,
                   ),
                   child: TextField(
-                    onChanged: (query) {},
+                    onChanged: (query) {
+                      setState(() {
+                        searchQuery = query
+                            .toLowerCase(); // Yazılan metni kaydediyoruz
+                      });
+                    },
+                    cursorColor: Colors.white,
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: 'Ara...',
                       hintStyle: TextStyle(color: Colors.grey.shade800),
+
                       prefixIcon: Icon(
                         Icons.search,
                         color: Colors.grey.shade800,
@@ -119,98 +134,114 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                HomeContainer(
-                  title: 'Edebi Sözler',
-                  description: 'Edebi Sözleri görüntülemek için tıklayın',
-                  iconColor: Color(0xFFFF8A8A),
-                  icon: 'assets/icons/soz.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SozlerScreen()),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Şiirler',
-                  description: 'Şiirleri görüntülemek için tıklayın',
-                  iconColor: Color(0xFFFFE066),
-                  icon: 'assets/icons/poetry.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SiirlerScreen()),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Şairler ve Yazarlar',
-                  description:
-                      'Şairleri ve Yazarları görüntülemek için tıklayın',
-                  iconColor: Color(0xFF8FDD9C),
-                  icon: 'assets/icons/poet.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SairlerYazarlarScreen(),
-                      ),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Hikayeler',
-                  description: 'Hikayeleri görüntülemek için tıklayın',
-                  iconColor: Color(0xFF7DB3FF),
-                  icon: 'assets/icons/story.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HikayelerScreen(),
-                      ),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Kitaplar',
-                  description: 'Hikayeleri görüntülemek için tıklayın',
-                  iconColor: Color(0xFFB895FF),
-                  icon: 'assets/icons/bookshelf.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BookScreen()),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Deyimler ve Atasözleri',
-                  description:
-                      'Deyimler ve Atasözlerini görüntülemek için tıklayın',
-                  iconColor: Color(0xFFFF5599),
-                  icon: 'assets/icons/write.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ProverbsScreen()),
-                    );
-                  },
-                ),
-                HomeContainer(
-                  title: 'Favoriler',
-                  description: 'Favoriye Alınanları görüntülemek için tıklayın',
-                  iconColor: Color(0xFF66E6FF),
-                  icon: 'assets/icons/heart.png',
-                  onfunction: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HikayelerScreen(),
-                      ),
-                    );
-                  },
-                ),
+                if (searchQuery.isEmpty || 'edebi sözler'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Edebi Sözler',
+                    description: 'Edebi Sözleri görüntülemek için tıklayın',
+                    iconColor: Color(0xFFFF8A8A),
+                    icon: 'assets/icons/soz.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SozlerScreen()),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty || 'şiirler'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Şiirler',
+                    description: 'Şiirleri görüntülemek için tıklayın',
+                    iconColor: Color(0xFFFFE066),
+                    icon: 'assets/icons/poetry.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SiirlerScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty ||
+                    'şairler'.contains(searchQuery) ||
+                    'yazarlar'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Şairler ve Yazarlar',
+                    description:
+                        'Şairleri ve Yazarları görüntülemek için tıklayın',
+                    iconColor: Color(0xFF8FDD9C),
+                    icon: 'assets/icons/poet.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SairlerYazarlarScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty || 'hikayeler'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Hikayeler',
+                    description: 'Hikayeleri görüntülemek için tıklayın',
+                    iconColor: Color(0xFF7DB3FF),
+                    icon: 'assets/icons/story.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HikayelerScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty || 'kitaplar'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Kitaplar',
+                    description: 'Hikayeleri görüntülemek için tıklayın',
+                    iconColor: Color(0xFFB895FF),
+                    icon: 'assets/icons/bookshelf.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BookScreen()),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty ||
+                    'deyimler'.contains(searchQuery) ||
+                    'atasözleri'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Deyimler ve Atasözleri',
+                    description:
+                        'Deyimler ve Atasözlerini görüntülemek için tıklayın',
+                    iconColor: Color(0xFFFF5599),
+                    icon: 'assets/icons/write.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProverbsScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty || 'favoriler'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Favoriler',
+                    description:
+                        'Favoriye Alınanları görüntülemek için tıklayın',
+                    iconColor: Color(0xFF66E6FF),
+                    icon: 'assets/icons/heart.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HikayelerScreen(),
+                        ),
+                      );
+                    },
+                  ),
               ],
             ),
           ),
