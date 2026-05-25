@@ -109,11 +109,27 @@ class BookDetailScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Expanded(child: Divider(indent: 16, endIndent: 8,color: blurColor)),
+                      Expanded(
+                        child: Divider(
+                          indent: 16,
+                          endIndent: 8,
+                          color: blurColor,
+                        ),
+                      ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
-                      Image.asset('assets/icons/book.png', scale: 18,color: blurColor),
+                      Image.asset(
+                        'assets/icons/book.png',
+                        scale: 18,
+                        color: blurColor,
+                      ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
-                      Expanded(child: Divider(indent: 8, endIndent: 16,color: blurColor)),
+                      Expanded(
+                        child: Divider(
+                          indent: 8,
+                          endIndent: 16,
+                          color: blurColor,
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -149,28 +165,32 @@ class TopSection extends StatelessWidget {
         mainAxisAlignment: alignment,
         children: alignment == MainAxisAlignment.end
             ? [
-                // SAĞ: YAZIlar - ASSET
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16),
-                      child: Text(
-                        currentBook.name,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Text(
+                          currentBook.name,
+                  
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      child: Text(
-                        currentBook.author,
-                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Text(
+                          currentBook.author,
+                  
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Container(
                   width: 75,
@@ -187,7 +207,6 @@ class TopSection extends StatelessWidget {
                 ),
               ]
             : [
-                // SOL: ASSET - YAZILER
                 Container(
                   width: 75,
                   height: 100,
@@ -201,27 +220,30 @@ class TopSection extends StatelessWidget {
                     child: Image.asset(icon, scale: 15),
                   ),
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16), // ✅ LEFT
-                      child: Text(
-                        currentBook.name,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16), 
+                        child: Text(
+                          currentBook.name,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0), // ✅ RIGHT
-                      child: Text(
-                        currentBook.author,
-                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0), 
+                        child: Text(
+                          currentBook.author,
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
       ),
