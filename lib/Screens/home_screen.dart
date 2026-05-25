@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onChanged: (query) {
                       setState(() {
                         searchQuery = query
-                            .toLowerCase(); // Yazılan metni kaydediyoruz
+                            .toLowerCase(); 
                       });
                     },
                     cursorColor: Colors.white,
