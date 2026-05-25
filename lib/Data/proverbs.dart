@@ -33,4 +33,9 @@ List<Proverbs> proverbs = [
     description: 'Bir güçlüğü yenmek için başka bir güç yola başvurulmalıdır.',
     kategori: 'Atasözü',
   ),
+   Proverbs(
+    name: 'Acı acıyı keser, su sancıyı',
+    description: 'Bir güçlüğü yenmek için başka bir güç yola başvurulmalıdır.',
+    kategori: 'Deyim',
+  ),
 ];
