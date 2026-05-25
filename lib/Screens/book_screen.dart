@@ -7,20 +7,37 @@ class BookScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade800,
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Text(
+                  'Kategoriler',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               BookContainer(
                 icon: 'assets/icons/detective.png',
                 title: 'Polisiye',
+                iconColor: Colors.indigo.shade400,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Polisiye'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Polisiye',
+                        themeColor: Colors.indigoAccent,
+                        icon: 'assets/icons/detective.png',
+                        blurColor: Colors.indigo.shade400,
+                      ),
                     ),
                   );
                 },
@@ -28,12 +45,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/fantastic.png',
                 title: 'Fantastik',
+                iconColor: Colors.purple.shade300,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Fantastik'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Fantastik',
+                        themeColor: Colors.purple,
+                        icon: 'assets/icons/fantastic.png',
+                        blurColor: Colors.purple.shade300,
+                      ),
                     ),
                   );
                 },
@@ -41,12 +63,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/sci-fic.png',
                 title: 'Bilim Kurgu',
+                iconColor: Colors.lightBlueAccent.shade200,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Bilim Kurgu'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Bilim Kurgu',
+                        themeColor: Colors.lightBlueAccent,
+                        icon: 'assets/icons/sci-fic.png',
+                        blurColor: Colors.lightBlueAccent.shade200,
+                      ),
                     ),
                   );
                 },
@@ -54,12 +81,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/heart.png',
                 title: 'Romantik',
+                iconColor: Colors.red.shade300,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Romantik'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Romantik',
+                        themeColor: Colors.red,
+                        icon: 'assets/icons/heart.png',
+                        blurColor: Colors.red.shade300,
+                      ),
                     ),
                   );
                 },
@@ -67,12 +99,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/adventure.png',
                 title: 'Macera',
+                iconColor: Colors.amber.shade300,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Macera'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Macera',
+                        themeColor: Colors.amber,
+                        icon: 'assets/icons/adventure.png',
+                        blurColor: Colors.amber.shade300,
+                      ),
                     ),
                   );
                 },
@@ -80,12 +117,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/philosopher.png',
                 title: 'Felsefe',
+                iconColor: Colors.green.shade300,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Felsefe'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Felsefe',
+                        themeColor: Colors.green,
+                        icon: 'assets/icons/philosopher.png',
+                        blurColor: Colors.green.shade300,
+                      ),
                     ),
                   );
                 },
@@ -93,11 +135,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/pillar.png',
                 title: 'Tarih',
+                iconColor: Colors.pink.shade300,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BookDetailScreen(category: 'Tarih'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Tarih',
+                        themeColor: Colors.pink,
+                        icon: 'assets/icons/pillar.png',
+                        blurColor:Colors.pink.shade300,
+                      ),
                     ),
                   );
                 },
@@ -105,12 +153,17 @@ class BookScreen extends StatelessWidget {
               BookContainer(
                 icon: 'assets/icons/education.png',
                 title: 'Eğitim',
+                iconColor: Colors.deepPurpleAccent.shade200,
                 onfunction: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          BookDetailScreen(category: 'Eğitim'),
+                      builder: (context) => BookDetailScreen(
+                        category: 'Eğitim',
+                        themeColor: Colors.deepPurpleAccent,
+                        icon: 'assets/icons/education.png',
+                        blurColor: Colors.deepPurpleAccent.shade200,
+                      ),
                     ),
                   );
                 },
@@ -120,12 +173,17 @@ class BookScreen extends StatelessWidget {
                 child: BookContainer(
                   icon: 'assets/icons/food.png',
                   title: 'Yemek',
+                  iconColor: Colors.orange.shade300,
                   onfunction: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            BookDetailScreen(category: 'Yemek'),
+                        builder: (context) => BookDetailScreen(
+                          category: 'Yemek',
+                          themeColor: Colors.orange,
+                          icon: 'assets/icons/food.png',
+                          blurColor: Colors.orange.shade300,
+                        ),
                       ),
                     );
                   },
@@ -143,25 +201,34 @@ class BookContainer extends StatelessWidget {
   final String title;
   final String icon;
   final VoidCallback onfunction;
+  final Color iconColor;
   const BookContainer({
     super.key,
     required this.title,
     required this.icon,
     required this.onfunction,
+    required this.iconColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 12.0),
       child: GestureDetector(
         onTap: onfunction,
         child: Container(
           width: double.infinity,
-          height: 100,
+          height: 70,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.black,
+            color: Color(0xFF2A2A2A),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                offset: Offset(0, 8),
+              ),
+            ],
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 16.0),
@@ -169,12 +236,12 @@ class BookContainer extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.orangeAccent,
-                    borderRadius: BorderRadius.circular(20),
+                    color: iconColor,
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(icon, scale: 12),
+                    child: Image.asset(icon, scale: 18),
                   ),
                 ),
                 Padding(
@@ -192,6 +259,14 @@ class BookContainer extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                     ],
+                  ),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Icon(
+                    Icons.arrow_circle_right_outlined,
+                    color: iconColor,
                   ),
                 ),
               ],
