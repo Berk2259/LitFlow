@@ -34,30 +34,41 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
 
 ## 📸 Ekran Görüntüleri
 
-<p align="center">
-  <img src="./screenshots/HomeScreen.png" width="220">
-  <img src="./screenshots/WordScreen.png" width="220">
-  <img src="./screenshots/PoetScreen.png" width="220">
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Ana Sayfası</b><br><br>
+      <img src="./screenshots/HomeScreen.png" width="220">
+    </td>
+    <td align="center">
+      <b>Sözler Sayfası</b><br><br>
+      <img src="./screenshots/WordScreen.png" width="220">
+    </td>
+    <td align="center">
+      <b>Şiir Sayfası</b><br><br>
+      <img src="./screenshots/PoetScreen.png" width="220">
+    </td>
+  </tr>
 
-<p align="center">
-  <img src="./screenshots/StoryScreen1.png" width="220">
-  <img src="./screenshots/StoryScreen2.png" width="220">
-  <img src="./screenshots/BookScreen.png" width="220">
-</p>
+  <tr>
+    <td align="center">
+      <b>Story Sayfası 1</b><br><br>
+      <img src="./screenshots/StoryScreen1.png" width="220">
+    </td>
+    <td align="center">
+      <b>Story Sayfası 2</b><br><br>
+      <img src="./screenshots/StoryScreen2.png" width="220">
+    </td>
+    <td align="center">
+      <b>Kitaplar Sayfası</b><br><br>
+      <img src="./screenshots/BookScreen.png" width="220">
+    </td>
+  </tr>
 
-<p align="center">
-  <img src="./screenshots/FavoriteScreen.png" width="220">
-</p>
-
-### Ana Sayfası
-
-### Sözler Sayfası
-
-### Şiir Sayfası
-
-### Story Sayfası
-
-### Kitaplar Sayfası
-
-### Favoriler Sayfası
+  <tr>
+    <td align="center">
+      <b>Favoriler Sayfası</b><br><br>
+      <img src="./screenshots/FavoriteScreen.png" width="220">
+    </td>
+  </tr>
+</table>
