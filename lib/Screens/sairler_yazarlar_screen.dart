@@ -1,120 +1,235 @@
 import 'package:flutter/material.dart';
 
-class SairlerYazarlarScreen extends StatelessWidget {
+class SairlerYazarlarScreen extends StatefulWidget {
   const SairlerYazarlarScreen({super.key});
 
   @override
+  State<SairlerYazarlarScreen> createState() => _SairlerYazarlarScreenState();
+}
+
+class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
+  String searchQuery = '';
+  @override
   Widget build(BuildContext context) {
     final turkYazarlari = [
-      SairlerYazarlarContainer(
-        title: 'Nazım Hikmet',
-        color: Colors.blue.shade300,
-        name: 'NH',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Orhan Pamuk',
-        color: Colors.red.shade300,
-        name: 'OP',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Yaşar Kemal',
-        color: Colors.green.shade300,
-        name: 'YK',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Ahmet Hamdi Tanpınar',
-        color: Colors.amber.shade300,
-        name: 'AT',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Cemal Süreya',
-        color: Colors.purple.shade300,
-        name: 'CP',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Orhan Veli Kanık',
-        color: Colors.brown.shade300,
-        name: 'OK',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Sabahattin Ali',
-        color: Colors.pink.shade300,
-        name: 'SA',
-        kategori: 'Türk',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Halit Ziya Uşaklıgil',
-        color: Colors.deepOrange.shade300,
-        name: 'HU',
-        kategori: 'Türk',
-      ),
+      if (searchQuery.isEmpty ||
+          'Nazım Hikmet'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Nazım Hikmet',
+          color: Colors.blue.shade300,
+          name: 'NH',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Orhan Pamuk'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Orhan Pamuk',
+          color: Colors.red.shade300,
+          name: 'OP',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Yaşar Kemal'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Yaşar Kemal',
+          color: Colors.green.shade300,
+          name: 'YK',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Ahmet Hamdi Tanpınar'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Ahmet Hamdi Tanpınar',
+          color: Colors.amber.shade300,
+          name: 'AT',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Cemal Süreya'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Cemal Süreya',
+          color: Colors.purple.shade300,
+          name: 'CP',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Orhan Veli Kanık'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Orhan Veli Kanık',
+          color: Colors.brown.shade300,
+          name: 'OK',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Sabahattin Ali'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Sabahattin Ali',
+          color: Colors.pink.shade300,
+          name: 'SA',
+          kategori: 'Türk',
+        ),
+      if (searchQuery.isEmpty ||
+          'Halit Ziya Uşaklıgil'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Halit Ziya Uşaklıgil',
+          color: Colors.deepOrange.shade300,
+          name: 'HU',
+          kategori: 'Türk',
+        ),
     ];
 
     final dunyaYazarlari = [
-      SairlerYazarlarContainer(
-        title: 'William Shakespeare',
-        color: Colors.blue.shade300,
-        name: 'WP',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Fyodor Dostoevsky',
-        color: Colors.deepOrange.shade300,
-        name: 'FD',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Leo Tolstoy',
-        color: Colors.red.shade300,
-        name: 'LT',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Franz Kafka',
-        color: Colors.purple.shade300,
-        name: 'FK',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Victor Hugo',
-        color: Colors.amber.shade300,
-        name: 'VH',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'George Orwell',
-        color: Colors.brown.shade300,
-        name: 'GO',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Ernest Hemingway',
-        color: Colors.green.shade300,
-        name: 'EH',
-        kategori: 'Dünya',
-      ),
-      SairlerYazarlarContainer(
-        title: 'Gabriel García Márquez',
-        color: Colors.pink.shade300,
-        name: 'GM',
-        kategori: 'Dünya',
-      ),
+      if (searchQuery.isEmpty ||
+          'William Shakespeare'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'William Shakespeare',
+          color: Colors.blue.shade300,
+          name: 'WP',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Fyodor Dostoevsky'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Fyodor Dostoevsky',
+          color: Colors.deepOrange.shade300,
+          name: 'FD',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Leo Tolstoy'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Leo Tolstoy',
+          color: Colors.red.shade300,
+          name: 'LT',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Franz Kafka'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Franz Kafka',
+          color: Colors.purple.shade300,
+          name: 'FK',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Victor Hugo'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Victor Hugo',
+          color: Colors.amber.shade300,
+          name: 'VH',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'George Orwell'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'George Orwell',
+          color: Colors.brown.shade300,
+          name: 'GO',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Ernest Hemingway'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Ernest Hemingway',
+          color: Colors.green.shade300,
+          name: 'EH',
+          kategori: 'Dünya',
+        ),
+      if (searchQuery.isEmpty ||
+          'Gabriel García Márquez'.toLowerCase().contains(searchQuery))
+        SairlerYazarlarContainer(
+          title: 'Gabriel García Márquez',
+          color: Colors.pink.shade300,
+          name: 'GM',
+          kategori: 'Dünya',
+        ),
     ];
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 16.0),
+          padding: const EdgeInsets.only(left: 16.0, right: 16),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Colors.white,
+                        size: 22,
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Şairler ve Yazarlar',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+
+                        Text(
+                          '${turkYazarlari.length} Türk ve ${dunyaYazarlari.length} Dünya Yazarı',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.white.withValues(alpha: 0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.green.shade300,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/icons/poet.png', scale: 18),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Divider(endIndent: 8, indent: 8, thickness: 1),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                  child: TextField(
+                    onChanged: (query) {
+                      setState(() {
+                        searchQuery = query.toLowerCase();
+                      });
+                    },
+                    cursorColor: Colors.white,
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: 'Ara...',
+                      hintStyle: TextStyle(color: Colors.grey.shade800),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.grey.shade800,
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFF2A2A2A),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
                 Text(
                   'Öne Çıkanlar',
                   style: TextStyle(color: Colors.white, fontSize: 18),
@@ -136,14 +251,14 @@ class SairlerYazarlarScreen extends StatelessWidget {
                           shadowColor: Colors.red.shade400,
                         ),
                         FavoriContainer(
-                          name: 'WP',
-                          color: Colors.blue.shade300,
-                          shadowColor: Colors.blue.shade400,
+                          name: 'FK',
+                          color: Colors.purple.shade300,
+                          shadowColor: Colors.purple.shade400,
                         ),
                         FavoriContainer(
-                          name: 'NH',
-                          color: Colors.red.shade300,
-                          shadowColor: Colors.red.shade400,
+                          name: 'EH',
+                          color: Colors.green.shade300,
+                          shadowColor: Colors.green.shade400,
                         ),
                       ],
                     ),
@@ -202,7 +317,7 @@ class SairlerYazarlarScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 24.0),
                       child: Text(
                         dunyaYazarlari.length.toString(),
-                        style: TextStyle(color: Colors.indigo, fontSize: 30),
+                        style: TextStyle(color: Colors.blue.shade300, fontSize: 30),
                       ),
                     ),
                   ],

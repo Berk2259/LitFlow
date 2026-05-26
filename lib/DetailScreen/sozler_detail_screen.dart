@@ -76,22 +76,19 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xFFFF8A8A),
+                        color: Colors.red.shade300,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.format_quote_rounded,
-                          color: Colors.white,
-                        ),
+                        child: Image.asset('assets/icons/soz.png', scale: 18),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            Divider(endIndent: 16, indent: 16, thickness: 1),
+            Divider(endIndent: 8, indent: 8, thickness: 1),
             Expanded(
               child: ListView.builder(
                 itemCount: filteredSozler.length,
