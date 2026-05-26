@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lirica/DetailScreen/detail_screen.dart';
 
 class SairlerYazarlarScreen extends StatefulWidget {
   const SairlerYazarlarScreen({super.key});
@@ -19,6 +20,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.blue.shade300,
           name: 'NH',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Nazım Hikmet'),
         ),
       if (searchQuery.isEmpty ||
           'Orhan Pamuk'.toLowerCase().contains(searchQuery))
@@ -27,6 +29,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.red.shade300,
           name: 'OP',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Orhan Pamuk'),
         ),
       if (searchQuery.isEmpty ||
           'Yaşar Kemal'.toLowerCase().contains(searchQuery))
@@ -35,6 +38,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.green.shade300,
           name: 'YK',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Yaşar Kemal'),
         ),
       if (searchQuery.isEmpty ||
           'Ahmet Hamdi Tanpınar'.toLowerCase().contains(searchQuery))
@@ -43,6 +47,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.amber.shade300,
           name: 'AT',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Ahmet Hamdi Tanpınar'),
         ),
       if (searchQuery.isEmpty ||
           'Cemal Süreya'.toLowerCase().contains(searchQuery))
@@ -51,6 +56,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.purple.shade300,
           name: 'CP',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Cemal Süreya'),
         ),
       if (searchQuery.isEmpty ||
           'Orhan Veli Kanık'.toLowerCase().contains(searchQuery))
@@ -59,6 +65,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.brown.shade300,
           name: 'OK',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Orhan Veli Kanık'),
         ),
       if (searchQuery.isEmpty ||
           'Sabahattin Ali'.toLowerCase().contains(searchQuery))
@@ -67,6 +74,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.pink.shade300,
           name: 'SA',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Sabahattin Ali'),
         ),
       if (searchQuery.isEmpty ||
           'Halit Ziya Uşaklıgil'.toLowerCase().contains(searchQuery))
@@ -75,6 +83,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.deepOrange.shade300,
           name: 'HU',
           kategori: 'Türk',
+          screen: PoetDetailScreen(name: 'Halit Ziya Uşaklıgil'),
         ),
     ];
 
@@ -86,6 +95,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.blue.shade300,
           name: 'WP',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'William Shakespeare'),
         ),
       if (searchQuery.isEmpty ||
           'Fyodor Dostoevsky'.toLowerCase().contains(searchQuery))
@@ -94,6 +104,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.deepOrange.shade300,
           name: 'FD',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Fyodor Dostoevsky'),
         ),
       if (searchQuery.isEmpty ||
           'Leo Tolstoy'.toLowerCase().contains(searchQuery))
@@ -102,6 +113,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.red.shade300,
           name: 'LT',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Leo Tolstoy'),
         ),
       if (searchQuery.isEmpty ||
           'Franz Kafka'.toLowerCase().contains(searchQuery))
@@ -110,6 +122,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.purple.shade300,
           name: 'FK',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Franz Kafka'),
         ),
       if (searchQuery.isEmpty ||
           'Victor Hugo'.toLowerCase().contains(searchQuery))
@@ -118,6 +131,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.amber.shade300,
           name: 'VH',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Victor Hugo'),
         ),
       if (searchQuery.isEmpty ||
           'George Orwell'.toLowerCase().contains(searchQuery))
@@ -126,6 +140,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.brown.shade300,
           name: 'GO',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'George Orwell'),
         ),
       if (searchQuery.isEmpty ||
           'Ernest Hemingway'.toLowerCase().contains(searchQuery))
@@ -134,6 +149,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.green.shade300,
           name: 'EH',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Ernest Hemingway'),
         ),
       if (searchQuery.isEmpty ||
           'Gabriel García Márquez'.toLowerCase().contains(searchQuery))
@@ -142,6 +158,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           color: Colors.pink.shade300,
           name: 'GM',
           kategori: 'Dünya',
+          screen: PoetDetailScreen(name: 'Gabriel García Márquez'),
         ),
     ];
     return Scaffold(
@@ -197,7 +214,10 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image.asset('assets/icons/poet.png', scale: 18),
+                          child: Image.asset(
+                            'assets/icons/poet.png',
+                            scale: 18,
+                          ),
                         ),
                       ),
                     ),
@@ -317,7 +337,10 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
                       padding: const EdgeInsets.only(right: 24.0),
                       child: Text(
                         dunyaYazarlari.length.toString(),
-                        style: TextStyle(color: Colors.blue.shade300, fontSize: 30),
+                        style: TextStyle(
+                          color: Colors.blue.shade300,
+                          fontSize: 30,
+                        ),
                       ),
                     ),
                   ],
@@ -366,13 +389,14 @@ class SairlerYazarlarContainer extends StatelessWidget {
   final Color color;
   final String name;
   final String kategori;
-
+  final Widget screen;
   const SairlerYazarlarContainer({
     super.key,
     required this.title,
     required this.color,
     required this.name,
     required this.kategori,
+    required this.screen,
   });
 
   @override
@@ -470,9 +494,17 @@ class SairlerYazarlarContainer extends StatelessWidget {
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 16.0),
-                    child: Icon(
-                      Icons.arrow_circle_right_outlined,
-                      color: color,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => screen),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.arrow_circle_right_outlined,
+                        color: color,
+                      ),
                     ),
                   ),
                 ],

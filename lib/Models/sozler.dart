@@ -13,3 +13,4 @@ class Sozler {
     required this.color,
   });
 }
+
