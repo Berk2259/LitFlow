@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Screens/screens.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+/*      WidgetsFlutterBinding.ensureInitialized();
+  
+  // Bütün favorileri sil
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.remove('favorites');  */
+  
+  runApp(const MyApp()); 
+  
 }
 
 class MyApp extends StatelessWidget {

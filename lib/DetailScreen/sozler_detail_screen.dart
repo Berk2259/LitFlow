@@ -1,13 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Data/sozler.dart';
+import 'package:lirica/Services/favorite_services.dart';
 
-class SozlerDetailScreen extends StatelessWidget {
+class SozlerDetailScreen extends StatefulWidget {
   final String category;
   const SozlerDetailScreen({super.key, required this.category});
 
   @override
+  State<SozlerDetailScreen> createState() => _SozlerDetailScreenState();
+}
+
+class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
+  List<Map<String, dynamic>> favorites = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadFavorites();
+  }
+
+  Future<void> loadFavorites() async {
+    favorites = await FavoritesService.getFavorites();
+
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final filteredSozler = sozler.where((q) => q.kategori == category).toList();
+    final filteredSozler = sozler
+        .where((q) => q.kategori == widget.category)
+        .toList();
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
@@ -32,7 +54,7 @@ class SozlerDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        category,
+                        widget.category,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -133,13 +155,50 @@ class SozlerDetailScreen extends StatelessWidget {
                                 ),
                               ),
                               Divider(color: Colors.grey.shade800),
-                              Text(
-                                textAlign: TextAlign.center,
-                                ozlu_sozler.author,
-                                style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontSize: 14,
-                                ),
+                              Row(
+                                children: [
+                                  Text(
+                                    textAlign: TextAlign.center,
+                                    ozlu_sozler.author,
+                                    style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    onPressed: () async {
+                                      await FavoritesService.toggleFavorite(
+                                        title: ozlu_sozler.text,
+                                        type: 'Söz',
+                                        description: ozlu_sozler.author,
+                                        asset: 'assets/icons/soz.png',
+                                        color: Colors.red.shade300,
+                                      );
+                                      if (!mounted) return;
+                                      await loadFavorites();
+                                    },
+                                    icon: Icon(
+                                      favorites.any(
+                                            (f) =>
+                                                f["title"] ==
+                                                    ozlu_sozler.text &&
+                                                f["type"] == "Söz",
+                                          )
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color:
+                                          favorites.any(
+                                            (f) =>
+                                                f["title"] ==
+                                                    ozlu_sozler.text &&
+                                                f["type"] == "Söz",
+                                          )
+                                          ? Colors.red
+                                          : Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

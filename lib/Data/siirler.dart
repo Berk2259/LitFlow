@@ -3,6 +3,7 @@ import 'package:lirica/Models/siirler.dart';
 
 List<Siirler> siirler = [
   Siirler(
+    id: 1,
     text: [
       'Seviyorum seni ekmeği tuza banıp yer gibi',
       'Geceleyin ateşler içinde uyanarak ağzımı dayayıp musluğa su içer gibi',
@@ -17,6 +18,7 @@ List<Siirler> siirler = [
     color: Colors.red,
   ),
   Siirler(
+    id: 2,
     text: [
       'Seni düşünürken',
       'Bir çakıl taşı ısınır içimde',

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Data/book.dart';
 import 'package:lirica/Models/book.dart';
+import 'package:lirica/Services/favorite_services.dart';
 
-class BookDetailScreen extends StatelessWidget {
+class BookDetailScreen extends StatefulWidget {
   final String category;
   final Color themeColor;
   final String icon;
@@ -16,8 +17,29 @@ class BookDetailScreen extends StatelessWidget {
   });
 
   @override
+  State<BookDetailScreen> createState() => _BookDetailScreenState();
+}
+
+class _BookDetailScreenState extends State<BookDetailScreen> {
+  List<Map<String, dynamic>> favorites = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadFavorites();
+  }
+
+  Future<void> loadFavorites() async {
+    favorites = await FavoritesService.getFavorites();
+
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final filteredBook = book.where((q) => q.kategori == category).toList();
+    final filteredBook = book
+        .where((q) => q.kategori == widget.category)
+        .toList();
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
@@ -34,17 +56,17 @@ class BookDetailScreen extends StatelessWidget {
                   if (isLeft)
                     TopSection(
                       currentBook: currentBook,
-                      themeColor: themeColor,
-                      blurColor: blurColor,
-                      icon: icon,
+                      themeColor: widget.themeColor,
+                      blurColor: widget.blurColor,
+                      icon: widget.icon,
                       alignment: MainAxisAlignment.start,
                     )
                   else
                     TopSection(
                       currentBook: currentBook,
-                      themeColor: themeColor,
-                      blurColor: blurColor,
-                      icon: icon,
+                      themeColor: widget.themeColor,
+                      blurColor: widget.blurColor,
+                      icon: widget.icon,
                       alignment: MainAxisAlignment.end,
                     ),
 
@@ -54,7 +76,7 @@ class BookDetailScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       color: Color(0xFF2A2A2A),
                       border: Border(
-                        left: BorderSide(color: themeColor, width: 5),
+                        left: BorderSide(color: widget.themeColor, width: 5),
                       ),
                     ),
                     child: Column(
@@ -68,7 +90,7 @@ class BookDetailScreen extends StatelessWidget {
                           ),
                           child: Icon(
                             Icons.format_quote_rounded,
-                            color: themeColor,
+                            color: widget.themeColor,
                             size: 30,
                           ),
                         ),
@@ -86,26 +108,61 @@ class BookDetailScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: themeColor,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          left: 16.0,
-                          right: 16.0,
-                          bottom: 8.0,
-                          top: 8.0,
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: widget.themeColor,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 16.0,
+                              right: 16.0,
+                              bottom: 8.0,
+                              top: 8.0,
+                            ),
+                            child: Text(
+                              '${currentBook.pageNo} sayfa',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          '${currentBook.pageNo} sayfa',
-                          style: TextStyle(color: Colors.white),
+                      ),
+                      Spacer(),
+                      IconButton(
+                        onPressed: () async {
+                          await FavoritesService.toggleFavorite(
+                            title: currentBook.name,
+                            type: 'Kitap',
+                            description: currentBook.author,
+                            asset: 'assets/icons/bookshelf.png',
+                            color: Colors.purple.shade300,
+                          );
+                          if (!mounted) return;
+                          await loadFavorites();
+                        },
+                        icon: Icon(
+                          favorites.any(
+                                (f) =>
+                                    f["title"] == currentBook.name &&
+                                    f["type"] == "Kitap",
+                              )
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          color:
+                              favorites.any(
+                                (f) =>
+                                    f["title"] == currentBook.name &&
+                                    f["type"] == "Kitap",
+                              )
+                              ? Colors.red
+                              : Colors.white,
                         ),
                       ),
-                    ),
+                    ],
                   ),
                   Row(
                     children: [
@@ -113,21 +170,21 @@ class BookDetailScreen extends StatelessWidget {
                         child: Divider(
                           indent: 16,
                           endIndent: 8,
-                          color: blurColor,
+                          color: widget.blurColor,
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                       Image.asset(
                         'assets/icons/book.png',
                         scale: 18,
-                        color: blurColor,
+                        color: widget.blurColor,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                       Expanded(
                         child: Divider(
                           indent: 8,
                           endIndent: 16,
-                          color: blurColor,
+                          color: widget.blurColor,
                         ),
                       ),
                     ],
@@ -173,7 +230,7 @@ class TopSection extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 16),
                         child: Text(
                           currentBook.name,
-                  
+
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -185,7 +242,7 @@ class TopSection extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 16.0),
                         child: Text(
                           currentBook.author,
-                  
+
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                       ),
@@ -225,7 +282,7 @@ class TopSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 16), 
+                        padding: const EdgeInsets.only(left: 16),
                         child: Text(
                           currentBook.name,
                           style: TextStyle(
@@ -236,7 +293,7 @@ class TopSection extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 16.0), 
+                        padding: const EdgeInsets.only(left: 16.0),
                         child: Text(
                           currentBook.author,
                           style: TextStyle(color: Colors.white, fontSize: 14),

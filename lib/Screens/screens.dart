@@ -5,3 +5,4 @@ export 'sairler_yazarlar_screen.dart';
 export 'hikayeler_screen.dart';
 export 'book_screen.dart';
 export 'proverbs_screen.dart';
+export 'favorite_screen.dart';

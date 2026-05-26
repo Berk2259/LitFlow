@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Data/siirler.dart';
+import 'package:lirica/Services/favorite_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SiirlerDetailScreen extends StatelessWidget {
+class SiirlerDetailScreen extends StatefulWidget {
   final String category;
   const SiirlerDetailScreen({super.key, required this.category});
 
   @override
+  State<SiirlerDetailScreen> createState() => _SiirlerDetailScreenState();
+}
+
+class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
+  List<Map<String, dynamic>> favorites = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadFavorites();
+  }
+
+  Future<void> loadFavorites() async {
+    favorites = await FavoritesService.getFavorites();
+
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
     final filteredSiirler = siirler
-        .where((q) => q.kategori == category)
+        .where((q) => q.kategori == widget.category)
         .toList();
     return Scaffold(
       backgroundColor: Color(0xFF121212),
@@ -34,7 +55,7 @@ class SiirlerDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        category,
+                        widget.category,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -56,12 +77,15 @@ class SiirlerDetailScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color:  Color(0xFFFFE066),
+                        color: Color(0xFFFFE066),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/icons/poetry.png',scale: 18,),
+                        child: Image.asset(
+                          'assets/icons/poetry.png',
+                          scale: 18,
+                        ),
                       ),
                     ),
                   ),
@@ -138,17 +162,50 @@ class SiirlerDetailScreen extends StatelessWidget {
                               );
                             }).toList(),
                             Divider(color: Colors.grey.shade800),
-                            Text(
-                              siir.author,
-                              style: TextStyle(
-                                color: Colors.redAccent,
-                                fontSize: 14,
-                                fontStyle: FontStyle.italic,
-                              ),
+                            Row(
+                              children: [
+                                Text(
+                                  siir.author,
+                                  style: TextStyle(
+                                    color: Colors.redAccent,
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                                Spacer(),
+                                IconButton(
+                                  onPressed: () async {
+                                    await FavoritesService.toggleFavorite(
+                                      title: siir.title,
+                                      type: 'Şiir',
+                                      asset: 'assets/icons/poetry.png',
+                                      color: Colors.amber,
+                                      description: siir.author
+                                    );
+
+                                    if (!mounted) return;
+                                  
+                                    await loadFavorites();
+                                  },
+                                  icon: Icon(
+                                    favorites.any(
+                                          (f) => f["title"] == siir.title && f["type"] == "Şiir",
+                                        )
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        favorites.any(
+                                          (f) => f["title"] == siir.title,
+                                        )
+                                        ? Colors.red
+                                        : Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ),
+                      ), 
                     ),
                   );
                 },
