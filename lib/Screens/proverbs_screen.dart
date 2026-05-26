@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Data/proverbs.dart';
+import 'package:lirica/Services/favorite_services.dart';
 
 class ProverbsScreen extends StatefulWidget {
   const ProverbsScreen({super.key});
@@ -28,6 +29,20 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
               p.description.toLowerCase().contains(searchQuery),
         )
         .toList();
+  }
+
+  List<Map<String, dynamic>> favorites = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadFavorites();
+  }
+
+  Future<void> loadFavorites() async {
+    favorites = await FavoritesService.getFavorites();
+
+    setState(() {});
   }
 
   Widget filterButton(String label) {
@@ -199,73 +214,121 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                child: Row(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              15,
-                                            ),
-                                            color: Colors.pinkAccent.shade200
-                                                .withOpacity(0.30),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                  color: Colors
+                                                      .pinkAccent
+                                                      .shade200
+                                                      .withOpacity(0.30),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(
+                                                    8.0,
+                                                  ),
+                                                  child: Icon(
+                                                    Icons.format_quote_rounded,
+                                                    color: Colors.pink,
+                                                    size: 20,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 12),
+                                              Expanded(
+                                                child: Text(
+                                                  proverb.name,
+                                              
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Icon(
-                                              Icons.format_quote_rounded,
-                                              color: Colors.pink,
-                                              size: 20,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(width: 12),
-                                        Expanded(
-                                          child: Text(
-                                            proverb.name,
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
+                                          SizedBox(height: 8),
+                                          Text(
+                                            proverb.description,
+                                            
+                                            
                                             style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600,
-                                              color: Colors.white,
+                                              fontSize: 12,
+                                              color: Colors.grey.shade300,
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 8),
-                                    Text(
-                                      proverb.description,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                    ),
-                                    SizedBox(height: 8),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
-                                        color: Colors.pink.shade300,
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 8.0,
-                                          vertical: 4.0,
-                                        ),
-                                        child: Text(
-                                          proverb.kategori,
-                                          style: TextStyle(
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.white,
+                                          SizedBox(height: 8),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(
+                                                8,
+                                              ),
+                                              color: Colors.pink.shade300,
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                horizontal: 8.0,
+                                                vertical: 4.0,
+                                              ),
+                                              child: Text(
+                                                proverb.kategori,
+                                                style: TextStyle(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
                                           ),
-                                        ),
+                                        ],
+                                      ),
+                                    ),
+                                    
+                                    IconButton(
+                                      onPressed: () async {
+                                        await FavoritesService.toggleFavorite(
+                                          title: proverb
+                                              .name, 
+                                          type: proverb.kategori,
+                                          description: proverb.description,
+                                          asset: 'assets/icons/write.png',
+                                          color: Colors
+                                              .pink
+                                              .shade300, 
+                                        );
+                                        if (!mounted) return;
+                                        await loadFavorites();
+                                      },
+                                      icon: Icon(
+                                        favorites.any(
+                                              (f) =>
+                                                  f["title"] == proverb.name &&
+                                                  f["type"] ==
+                                                      proverb.kategori
+                                            )
+                                            ? Icons.favorite
+                                            : Icons.favorite_border,
+                                        color:
+                                            favorites.any(
+                                              (f) =>
+                                                  f["title"] == proverb.name &&
+                                                  f["type"] ==
+                                                      proverb.kategori
+                                            )
+                                            ? Colors.red
+                                            : Colors.white,
                                       ),
                                     ),
                                   ],

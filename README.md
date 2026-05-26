@@ -29,3 +29,30 @@ Lirica’nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anl
 - Dart
 - Hive (local database)
 - Material Design
+
+## Ekran Görüntüleri
+
+### Ana Sayfası
+
+![Ana Sayfa](./screenshots/HomeScreen.png)
+
+### Sözler Sayfası
+
+![Sözler](./screenshots/WordScreen.png)
+
+### Şiir Sayfası
+
+![Siir](./screenshots/PoetScreen.png)
+
+### Story Sayfası
+
+![Hikaye](./screenshots/StoryScreen1.png)
+![Hikaye](./screenshots/StoryScreen2.png)
+
+### Kitaplar Sayfası
+
+![Kitaplar](./screenshots/BookScreen.png)
+
+### Favoriler Sayfası
+
+![Favoriler](./screenshots/BookScreen.png)

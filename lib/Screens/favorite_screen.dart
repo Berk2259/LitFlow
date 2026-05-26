@@ -127,14 +127,19 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
-                child: Row(
-                  children: [
-                    _categoryButton('Tümü'),
-                    _categoryButton('Söz'),
-                    _categoryButton('Şiir'),
-                    _categoryButton('Hikaye'),
-                    _categoryButton('Kitap'),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _categoryButton('Tümü'),
+                      _categoryButton('Söz'),
+                      _categoryButton('Şiir'),
+                      _categoryButton('Hikaye'),
+                      _categoryButton('Kitap'),
+                      _categoryButton('Atasözü'),
+                      _categoryButton('Deyim'),
+                    ],
+                  ),
                 ),
               ),
               Expanded(
@@ -216,6 +221,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                             ),
                                             Text(
                                               item['description'],
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
                                                 color: Colors.grey,
                                                 fontSize: 12,

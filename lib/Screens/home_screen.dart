@@ -64,8 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextField(
                     onChanged: (query) {
                       setState(() {
-                        searchQuery = query
-                            .toLowerCase(); 
+                        searchQuery = query.toLowerCase();
                       });
                     },
                     cursorColor: Colors.white,
@@ -107,18 +106,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         description: 'Özlü Sözler',
                         icon: 'assets/icons/soz.png',
                         iconColor: Color(0xFFFF8A8A),
+                        screen: SozlerScreen(),
                       ),
                       PopularContainer(
                         title: 'Şiirler',
                         description: 'Şiir Arşivi',
                         icon: 'assets/icons/poetry.png',
                         iconColor: Color(0xFFFFE066),
+                        screen: SiirlerScreen(),
                       ),
                       PopularContainer(
                         title: 'Kitaplar',
                         description: 'Kitap Listesi',
                         icon: 'assets/icons/bookshelf.png',
                         iconColor: Color(0xFFB895FF),
+                        screen: BookScreen(),
                       ),
                     ],
                   ),
@@ -256,49 +258,62 @@ class PopularContainer extends StatelessWidget {
   final String icon;
   final Color iconColor;
   final String description;
+  final Widget screen;
   const PopularContainer({
     super.key,
     required this.title,
     required this.icon,
     required this.iconColor,
     required this.description,
+    required this.screen,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.4,
-        height: MediaQuery.of(context).size.height * 0.15,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Color(0xFF2A2A2A),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: iconColor,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => screen),
+          );
+        },
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.4,
+          height: MediaQuery.of(context).size.height * 0.15,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Color(0xFF2A2A2A),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: iconColor,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(icon, scale: 18),
+                  ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(icon, scale: 18),
+                SizedBox(height: 8),
+                Text(
+                  title,
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
-              ),
-              SizedBox(height: 8),
-              Text(title, style: TextStyle(color: Colors.white, fontSize: 16)),
-              SizedBox(height: 2),
-              Text(
-                description,
-                style: TextStyle(color: Colors.white38, fontSize: 12),
-              ),
-            ],
+                SizedBox(height: 2),
+                Text(
+                  description,
+                  style: TextStyle(color: Colors.white38, fontSize: 12),
+                ),
+              ],
+            ),
           ),
         ),
       ),
