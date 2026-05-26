@@ -19,7 +19,7 @@ Lirica, edebi sözler, şiirler ve kısa düşünce metinlerini keşfetmeyi ve s
 
 🎯 Amaç
 
-Lirica’nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlamlı edebi içerikleri günlük hayatın bir parçası haline getirmektir.
+Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlamlı edebi içerikleri günlük hayatın bir parçası haline getirmektir.
 
 ---
 
@@ -30,29 +30,31 @@ Lirica’nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anl
 - Hive (local database)
 - Material Design
 
-## Ekran Görüntüleri
+---
+
+## 📸 Ekran Görüntüleri
 
 ### Ana Sayfası
 
-![Ana Sayfa](./screenshots/HomeScreen.png)
+<img src="./screenshots/HomeScreen.png" width="250">
 
 ### Sözler Sayfası
 
-![Sözler](./screenshots/WordScreen.png)
+<img src="./screenshots/WordScreen.png" width="250">
 
 ### Şiir Sayfası
 
-![Siir](./screenshots/PoetScreen.png)
+<img src="./screenshots/PoetScreen.png" width="250">
 
 ### Story Sayfası
 
-![Hikaye](./screenshots/StoryScreen1.png)
-![Hikaye](./screenshots/StoryScreen2.png)
+<img src="./screenshots/StoryScreen1.png" width="250">
+<img src="./screenshots/StoryScreen2.png" width="250">
 
 ### Kitaplar Sayfası
 
-![Kitaplar](./screenshots/BookScreen.png)
+<img src="./screenshots/BookScreen.png" width="250">
 
 ### Favoriler Sayfası
 
-![Favoriler](./screenshots/BookScreen.png)
+<img src="./screenshots/FavoriteScreen.png" width="250">
