@@ -34,39 +34,30 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
 
 ## 📸 Ekran Görüntüleri
 
-### Ana Sayfası
-
-<p>
-  <img src="./screenshots/HomeScreen.png" width="250">
+<p align="center">
+  <img src="./screenshots/HomeScreen.png" width="220">
+  <img src="./screenshots/WordScreen.png" width="220">
+  <img src="./screenshots/PoetScreen.png" width="220">
 </p>
+
+<p align="center">
+  <img src="./screenshots/StoryScreen1.png" width="220">
+  <img src="./screenshots/StoryScreen2.png" width="220">
+  <img src="./screenshots/BookScreen.png" width="220">
+</p>
+
+<p align="center">
+  <img src="./screenshots/FavoriteScreen.png" width="220">
+</p>
+
+### Ana Sayfası
 
 ### Sözler Sayfası
 
-<p>
-  <img src="./screenshots/WordScreen.png" width="250">
-</p>
-
 ### Şiir Sayfası
-
-<p>
-  <img src="./screenshots/PoetScreen.png" width="250">
-</p>
 
 ### Story Sayfası
 
-<p>
-  <img src="./screenshots/StoryScreen1.png" width="250">
-  <img src="./screenshots/StoryScreen2.png" width="250">
-</p>
-
 ### Kitaplar Sayfası
 
-<p>
-  <img src="./screenshots/BookScreen.png" width="250">
-</p>
-
 ### Favoriler Sayfası
-
-<p>
-  <img src="./screenshots/FavoriteScreen.png" width="250">
-</p>
