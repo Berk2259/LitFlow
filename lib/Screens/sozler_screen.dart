@@ -11,6 +11,59 @@ class SozlerScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.white,
+                      size: 22,
+                    ),
+                  ),
+                  SizedBox(width: 16.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Edebi Sözler',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        'Kategoriler',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.white.withValues(alpha: 0.5),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red.shade300,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset('assets/icons/soz.png', scale: 18),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(endIndent: 8, indent: 8, thickness: 1),
             KategoriContainer(
               title: 'Aşk',
               description: 'Aşk sözlerini görüntülemek için tıklayın',
@@ -113,7 +166,7 @@ class SozlerScreen extends StatelessWidget {
                 );
               },
             ),
-             KategoriContainer(
+            KategoriContainer(
               title: 'Tarih',
               description: 'Tarih sözlerini görüntülemek için tıklayın',
               icon: 'assets/icons/ancient.png',

@@ -264,21 +264,25 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
                           name: 'NH',
                           color: Colors.blue.shade300,
                           shadowColor: Colors.blue.shade400,
+                          screen: PoetDetailScreen(name: 'Nazım Hikmet'),
                         ),
                         FavoriContainer(
                           name: 'OP',
                           color: Colors.red.shade300,
                           shadowColor: Colors.red.shade400,
+                          screen: PoetDetailScreen(name: 'Orhan Pamuk'),
                         ),
                         FavoriContainer(
                           name: 'FK',
                           color: Colors.purple.shade300,
                           shadowColor: Colors.purple.shade400,
+                          screen: PoetDetailScreen(name: 'Franz Kafka'),
                         ),
                         FavoriContainer(
                           name: 'EH',
                           color: Colors.green.shade300,
                           shadowColor: Colors.green.shade400,
+                          screen: PoetDetailScreen(name: 'Ernest Hemingway'),
                         ),
                       ],
                     ),
@@ -359,26 +363,39 @@ class FavoriContainer extends StatelessWidget {
   final String name;
   final Color color;
   final Color shadowColor;
+  final Widget screen;
   const FavoriContainer({
     super.key,
     required this.name,
     required this.color,
     required this.shadowColor,
+    required this.screen,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color,
-          boxShadow: [
-            BoxShadow(color: shadowColor, blurRadius: 6, spreadRadius: 2),
-          ],
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => screen),
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color,
+            boxShadow: [
+              BoxShadow(color: shadowColor, blurRadius: 6, spreadRadius: 2),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(name),
+          ),
         ),
-        child: Padding(padding: const EdgeInsets.all(16.0), child: Text(name)),
       ),
     );
   }
@@ -516,3 +533,4 @@ class SairlerYazarlarContainer extends StatelessWidget {
     );
   }
 }
+

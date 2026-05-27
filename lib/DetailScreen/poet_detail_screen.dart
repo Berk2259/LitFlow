@@ -189,35 +189,37 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                                     ),
                                   ),
                                   SizedBox(width: 10),
-                                  Spacer(),
-                                  IconButton(
-                                    onPressed: () async {
-                                      await FavoritesService.toggleFavorite(
-                                        title: poet.name,
-                                        type: 'Şair',
-                                        asset: 'assets/icons/poet.png',
-                                        color: Colors.green,
-                                        description: poet.description,
-                                      );
 
-                                      if (!mounted) return;
+                                  Expanded(
+                                    child: IconButton(
+                                      onPressed: () async {
+                                        await FavoritesService.toggleFavorite(
+                                          title: poet.name,
+                                          type: 'Şair',
+                                          asset: 'assets/icons/poet.png',
+                                          color: Colors.green,
+                                          description: poet.description,
+                                        );
 
-                                      await loadFavorites();
-                                    },
-                                    icon: Icon(
-                                      favorites.any(
-                                            (f) =>
-                                                f["title"] == poet.name &&
-                                                f["type"] == "Şair",
-                                          )
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          favorites.any(
-                                            (f) => f["title"] == poet.name,
-                                          )
-                                          ? Colors.red
-                                          : Colors.white,
+                                        if (!mounted) return;
+
+                                        await loadFavorites();
+                                      },
+                                      icon: Icon(
+                                        favorites.any(
+                                              (f) =>
+                                                  f["title"] == poet.name &&
+                                                  f["type"] == "Şair",
+                                            )
+                                            ? Icons.favorite
+                                            : Icons.favorite_border,
+                                        color:
+                                            favorites.any(
+                                              (f) => f["title"] == poet.name,
+                                            )
+                                            ? Colors.red
+                                            : Colors.white,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: 10),

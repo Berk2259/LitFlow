@@ -157,6 +157,59 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          color: Colors.white,
+                          size: 22,
+                        ),
+                      ),
+                      SizedBox(width: 16.0),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Hikayeler',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Hikayelerle ilgili bilgiler',
+                            style: TextStyle(fontSize: 12, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade300,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'assets/icons/story.png',
+                              scale: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(endIndent: 8, indent: 8, thickness: 1),
                 TextField(
                   onChanged: (query) {
                     setState(() {
@@ -198,6 +251,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         color: Colors.blue,
                         shadow: Colors.blue.shade300,
                         time: '8 dk',
+                        screen: StoryDetailScreen(),
                       ),
                       SizedBox(width: 16),
                       HikayeFavContainer(
@@ -207,6 +261,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         color: Colors.red,
                         shadow: Colors.red.shade300,
                         time: '12 dk',
+                        screen: StoryDetailScreen(),
                       ),
                       SizedBox(width: 16),
                       HikayeFavContainer(
@@ -216,6 +271,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         color: Colors.green,
                         shadow: Colors.green.shade300,
                         time: '15 dk',
+                        screen: StoryDetailScreen(),
                       ),
                       SizedBox(width: 16),
                     ],
@@ -544,6 +600,7 @@ class HikayeFavContainer extends StatelessWidget {
   final String short;
   final Color shadow;
   final String time;
+  final Widget screen;
   const HikayeFavContainer({
     super.key,
     required this.title,
@@ -552,59 +609,68 @@ class HikayeFavContainer extends StatelessWidget {
     required this.short,
     required this.shadow,
     required this.time,
+    required this.screen,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16.0),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.16,
-        width: MediaQuery.of(context).size.width * 0.4,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Color(0xFF2A2A2A),
-          boxShadow: [
-            BoxShadow(color: shadow, blurRadius: 4, offset: Offset(4, 0)),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: color,
-                  boxShadow: [BoxShadow(color: shadow, blurRadius: 4)],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(short, style: TextStyle(color: Colors.white)),
-                ),
-              ),
-              Text(
-                title,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-              Text(
-                description,
-                style: TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-              Row(
-                children: [
-                  Icon(Icons.access_time, size: 15, color: color),
-                  SizedBox(width: 5),
-                  Text(time, style: TextStyle(color: color)),
-                ],
-              ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => screen),
+          );
+        },
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.16,
+          width: MediaQuery.of(context).size.width * 0.4,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Color(0xFF2A2A2A),
+            boxShadow: [
+              BoxShadow(color: shadow, blurRadius: 4, offset: Offset(4, 0)),
             ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color,
+                    boxShadow: [BoxShadow(color: shadow, blurRadius: 4)],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(short, style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                Text(
+                  description,
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.access_time, size: 15, color: color),
+                    SizedBox(width: 5),
+                    Text(time, style: TextStyle(color: color)),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

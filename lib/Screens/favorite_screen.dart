@@ -109,7 +109,11 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
 
               Divider(),
               TextField(
-                onChanged: (query) {},
+                onChanged: (query) {
+                  setState(() {
+                    searchQuery = query.toLowerCase();
+                  });
+                },
                 cursorColor: Colors.white,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
