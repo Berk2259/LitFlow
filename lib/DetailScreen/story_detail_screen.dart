@@ -30,6 +30,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.3,
@@ -190,43 +191,48 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0xFF2A2A2A),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 8,
-                      offset: Offset(0, 6),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16.0, top: 16.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.book, color: Colors.blue),
-                          Text(
-                            'Hikaye',
-                            style: TextStyle(color: Colors.blue, fontSize: 18),
-                          ),
-                        ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFF2A2A2A),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 8,
+                        offset: Offset(0, 6),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        'Keloğlan bir sabah pazara giderken yolda Nasreddin Hoca ile karşılaşır.Hoca her zamanaki gibi gülümseyerek ona bugün aklını kalbinle birlikte kullanmasını öğütler. İkili köydeki anlaşmazlığı çözmek için küçük bir yolculuğa çıkar.Keloğlan cesarityle,Hoca ise nükteli sözleriyle herkesi aynı sofrada buluşturur. Gün sonunda Keloğlan sunu anlar: Gerçek bilgelik sadece çok bilmek değil, doğru zamanda doğru sözü de söyleyebilmektir.',
-                        style: TextStyle(color: Colors.white),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0, top: 16.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.book, color: Colors.blue),
+                            Text(
+                              'Hikaye',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'Keloğlan bir sabah pazara giderken yolda Nasreddin Hoca ile karşılaşır.Hoca her zamanaki gibi gülümseyerek ona bugün aklını kalbinle birlikte kullanmasını öğütler. İkili köydeki anlaşmazlığı çözmek için küçük bir yolculuğa çıkar.Keloğlan cesarityle,Hoca ise nükteli sözleriyle herkesi aynı sofrada buluşturur. Gün sonunda Keloğlan sunu anlar: Gerçek bilgelik sadece çok bilmek değil, doğru zamanda doğru sözü de söyleyebilmektir.',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

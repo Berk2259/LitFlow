@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lirica/Data/poet.dart';
 import 'package:lirica/Models/poet.dart';
+import 'package:lirica/Services/favorite_services.dart';
 
 class PoetDetailScreen extends StatefulWidget {
   final String name;
@@ -12,6 +13,20 @@ class PoetDetailScreen extends StatefulWidget {
 }
 
 class _PoetDetailScreenState extends State<PoetDetailScreen> {
+  List<Map<String, dynamic>> favorites = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadFavorites();
+  }
+
+  Future<void> loadFavorites() async {
+    favorites = await FavoritesService.getFavorites();
+
+    setState(() {});
+  }
+
   int selectedTab = 0;
   @override
   Widget build(BuildContext context) {
@@ -70,12 +85,12 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.red.shade300,
+                        color: Colors.green.shade300,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/icons/soz.png', scale: 18),
+                        child: Image.asset('assets/icons/poet.png', scale: 18),
                       ),
                     ),
                   ),
@@ -173,6 +188,39 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(width: 10),
+                                  Spacer(),
+                                  IconButton(
+                                    onPressed: () async {
+                                      await FavoritesService.toggleFavorite(
+                                        title: poet.name,
+                                        type: 'Şair',
+                                        asset: 'assets/icons/poet.png',
+                                        color: Colors.green,
+                                        description: poet.description,
+                                      );
+
+                                      if (!mounted) return;
+
+                                      await loadFavorites();
+                                    },
+                                    icon: Icon(
+                                      favorites.any(
+                                            (f) =>
+                                                f["title"] == poet.name &&
+                                                f["type"] == "Şair",
+                                          )
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color:
+                                          favorites.any(
+                                            (f) => f["title"] == poet.name,
+                                          )
+                                          ? Colors.red
+                                          : Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
                                 ],
                               ),
                               SizedBox(height: 10),

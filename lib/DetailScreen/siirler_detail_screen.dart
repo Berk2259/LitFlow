@@ -93,7 +93,6 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
               ),
             ),
             Divider(endIndent: 16, indent: 16),
-
             Expanded(
               child: ListView.builder(
                 itemCount: filteredSiirler.length,
