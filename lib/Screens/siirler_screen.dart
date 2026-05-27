@@ -8,9 +8,10 @@ class SiirlerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Color(0xFF121212),
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             KategoriContainer(
               title: 'Aşk',
@@ -95,8 +96,7 @@ class SiirlerScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        SiirlerDetailScreen(category: 'Doğa'),
+                    builder: (context) => SiirlerDetailScreen(category: 'Doğa'),
                   ),
                 );
               },
@@ -110,8 +110,7 @@ class SiirlerScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        SiirlerDetailScreen(category: 'Umut'),
+                    builder: (context) => SiirlerDetailScreen(category: 'Umut'),
                   ),
                 );
               },
