@@ -84,7 +84,6 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
               Divider(),
               Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.15,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Color(0xFF2A2A2A),
@@ -176,6 +175,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 10),
                             ],
                           ),
                         ),
@@ -360,11 +360,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.book,
-                            color: poet.color,
-                            size: 16,
-                          ),
+                          Icon(Icons.book, color: poet.color, size: 16),
                           SizedBox(width: 12),
                           Expanded(
                             child: Text(
