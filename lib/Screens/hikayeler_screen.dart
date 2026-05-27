@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lirica/Data/story.dart';
 import 'package:lirica/DetailScreen/story_detail_screen.dart';
 
 class HikayelerScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Masal',
           color: Colors.blue,
           time: '6 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Keleoğlan ve Nasreddin Hoca'),
         ),
       if (searchQuery.isEmpty ||
           'Dede Korkut Hikayeleri'.toLowerCase().contains(searchQuery))
@@ -34,7 +35,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Destan',
           color: Colors.green,
           time: '18 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Dede Korkut Hikayeleri'),
         ),
       if (searchQuery.isEmpty ||
           'Karagöz ile Hacivat'.toLowerCase().contains(searchQuery))
@@ -45,7 +46,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Geleneksel',
           color: Colors.amber,
           time: '5 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Karagöz ile Hacivat'),
         ),
       if (searchQuery.isEmpty ||
           'Fındık Kabuğunun Evi'.toLowerCase().contains(searchQuery))
@@ -56,7 +57,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Masal',
           color: Colors.redAccent,
           time: '7 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Fındık Kabuğunun Evi'),
         ),
       if (searchQuery.isEmpty ||
           'Çıldırmış Pendik'.toLowerCase().contains(searchQuery))
@@ -67,7 +68,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Öykü',
           color: Colors.purpleAccent,
           time: '10 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Çıldırmış Pendik'),
         ),
       if (searchQuery.isEmpty ||
           'Zeyno ile Babası'.toLowerCase().contains(searchQuery))
@@ -78,7 +79,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Roman',
           color: Colors.lightBlue,
           time: '25 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Zeyno ile Babası'),
         ),
     ];
     final dunyaHikayeleri = [
@@ -91,7 +92,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Masal',
           color: Colors.pink,
           time: '8 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Kırmızı Başlıklı Kız'),
         ),
       if (searchQuery.isEmpty || 'Pinakyo'.toLowerCase().contains(searchQuery))
         HikayeContainer(
@@ -101,7 +102,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Masal',
           color: Colors.orange,
           time: '12 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Pinakyo'),
         ),
       if (searchQuery.isEmpty ||
           'Küçük Prens'.toLowerCase().contains(searchQuery))
@@ -112,7 +113,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Öykü',
           color: Colors.blue.shade300,
           time: '15 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Küçük Prens'),
         ),
       if (searchQuery.isEmpty ||
           'Alice Harikalar Diyarında'.toLowerCase().contains(searchQuery))
@@ -123,7 +124,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Fantastik',
           color: Colors.purpleAccent.shade200,
           time: '22 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Alice Harikalar Diyarında'),
         ),
       if (searchQuery.isEmpty ||
           'Uyuyan Güzel'.toLowerCase().contains(searchQuery))
@@ -134,7 +135,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Masal',
           color: Colors.amber.shade300,
           time: '9 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Uyuyan Güzel'),
         ),
       if (searchQuery.isEmpty ||
           'Moby Dick'.toLowerCase().contains(searchQuery))
@@ -145,7 +146,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           category: 'Roman',
           color: Colors.teal.shade300,
           time: '45 dk',
-          screen: StoryDetailScreen(),
+          screen: StoryDetailScreen(name: 'Moby Dick'),
         ),
     ];
     return Scaffold(
@@ -245,13 +246,15 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                   child: Row(
                     children: [
                       HikayeFavContainer(
-                        title: 'Keloğlan',
+                        title: 'Keloğlan ve Nasreddin Hoca',
                         description: 'Türk Masalları',
-                        short: 'K',
+                        short: 'KH',
                         color: Colors.blue,
                         shadow: Colors.blue.shade300,
                         time: '8 dk',
-                        screen: StoryDetailScreen(),
+                        screen: StoryDetailScreen(
+                          name: 'Keloğlan ve Nasreddin Hoca',
+                        ),
                       ),
                       SizedBox(width: 16),
                       HikayeFavContainer(
@@ -261,7 +264,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         color: Colors.red,
                         shadow: Colors.red.shade300,
                         time: '12 dk',
-                        screen: StoryDetailScreen(),
+                        screen: StoryDetailScreen(name: 'Pinokyo'),
                       ),
                       SizedBox(width: 16),
                       HikayeFavContainer(
@@ -271,7 +274,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         color: Colors.green,
                         shadow: Colors.green.shade300,
                         time: '15 dk',
-                        screen: StoryDetailScreen(),
+                        screen: StoryDetailScreen(name: 'Dede Korkut'),
                       ),
                       SizedBox(width: 16),
                     ],
@@ -292,30 +295,35 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                   title: 'Masal',
                   description: 'Masalları Keşfet',
                   color: Colors.blue.shade300,
+                  screen: StoryCategoryScreen(category: 'Masal'),
                 ),
                 CategoryContainer(
                   icon: 'assets/icons/novel.png',
                   title: 'Destan',
                   description: 'Destanları Oku',
                   color: Colors.green.shade300,
+                  screen: StoryCategoryScreen(category: 'Destan'),
                 ),
                 CategoryContainer(
                   icon: 'assets/icons/adventure.png',
                   title: 'Macera',
                   description: 'Macera Hikayeleri',
                   color: Colors.amber.shade300,
+                  screen: StoryCategoryScreen(category: 'Macera'),
                 ),
                 CategoryContainer(
                   icon: 'assets/icons/fantastic.png',
                   title: 'Fantastik',
                   description: 'Hayal Gücüne Yolculuk',
                   color: Colors.purple.shade300,
+                  screen: StoryCategoryScreen(category: 'Fantastik'),
                 ),
                 CategoryContainer(
                   icon: 'assets/icons/boy.png',
                   title: 'Çocuk',
                   description: 'Çocuklara Özel Hikayeler',
                   color: Colors.red.shade300,
+                  screen: StoryCategoryScreen(category: 'Çocuk'),
                 ),
                 SizedBox(height: 16.0),
                 Row(
@@ -523,12 +531,14 @@ class CategoryContainer extends StatelessWidget {
   final Color color;
   final String title;
   final String description;
+  final Widget screen;
   const CategoryContainer({
     super.key,
     required this.icon,
     required this.title,
     required this.description,
     required this.color,
+    required this.screen,
   });
 
   @override
@@ -583,7 +593,15 @@ class CategoryContainer extends StatelessWidget {
               Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 16),
-                child: Icon(Icons.arrow_circle_right_outlined, color: color),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => screen),
+                    );
+                  },
+                  child: Icon(Icons.arrow_circle_right_outlined, color: color),
+                ),
               ),
             ],
           ),
@@ -672,6 +690,176 @@ class HikayeFavContainer extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class StoryCategoryScreen extends StatefulWidget {
+  final String category;
+
+  const StoryCategoryScreen({super.key, required this.category});
+
+  @override
+  State<StoryCategoryScreen> createState() => _StoryCategoryScreenState();
+}
+
+class _StoryCategoryScreenState extends State<StoryCategoryScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final filteredStoryCategory = story
+        .where((q) => q.category == widget.category)
+        .toList();
+    return Scaffold(
+      backgroundColor: Color(0xFF121212),
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: filteredStoryCategory.length,
+          itemBuilder: (context, index) {
+            final storyCategory = filteredStoryCategory[index];
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                  color: Color(0xFF2A2A2A),
+                  border: Border(
+                    left: BorderSide(color: storyCategory.color, width: 5),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 8,
+                      offset: Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: storyCategory.color,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            storyCategory.shortName,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 16.0,
+                          top: 8.0,
+                          bottom: 8.0,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              storyCategory.name,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  storyCategory.category,
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                Text(
+                                  ' - ${storyCategory.type}',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: storyCategory.color,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 8.0,
+                                      right: 8.0,
+                                      top: 1,
+                                      bottom: 1,
+                                    ),
+                                    child: Text(
+                                      storyCategory.category,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 5),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.access_time,
+                                      size: 16,
+                                      color: storyCategory.color,
+                                    ),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      storyCategory.time,
+                                      style: TextStyle(
+                                        color: storyCategory.color,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    StoryDetailScreen(name: storyCategory.name),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            Icons.arrow_circle_right_outlined,
+                            color: storyCategory.color,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

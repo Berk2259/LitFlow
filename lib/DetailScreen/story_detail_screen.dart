@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lirica/Data/story.dart';
 import 'package:lirica/Services/favorite_services.dart';
 
 class StoryDetailScreen extends StatefulWidget {
-  const StoryDetailScreen({super.key});
+  final String name;
+  const StoryDetailScreen({super.key, required this.name});
 
   @override
   State<StoryDetailScreen> createState() => _StoryDetailScreenState();
@@ -25,23 +27,24 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final currentStory = story.firstWhere(
+      (q) => q.name == widget.name,
+      orElse: () => story.first,
+    );
+
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
           children: [
-            
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.3,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    Color(0xFF0052D4), // Canlı mavi (sol üst)
-                    Color(0xFF1B2A47), // Koyu lacivert (sağ alt)
-                  ],
+                  colors: currentStory.gradientColors,
                 ),
               ),
               child: Padding(
@@ -68,14 +71,14 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Masal',
+                          currentStory.category,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     SizedBox(height: 16),
                     Text(
-                      'Keloğlan ve Nasreddin Hoca',
+                      currentStory.name,
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.white,
@@ -85,7 +88,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                     Row(
                       children: [
                         Text(
-                          'Masal',
+                          currentStory.category,
                           style: TextStyle(fontSize: 12, color: Colors.grey),
                         ),
                         SizedBox(width: 10),
@@ -122,7 +125,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue.withOpacity(0.15),
+                          color: currentStory.color.withOpacity(0.15),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -133,12 +136,15 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                           ),
                           child: Row(
                             children: [
-                              Icon(Icons.access_time, color: Colors.blue),
+                              Icon(
+                                Icons.access_time,
+                                color: currentStory.color,
+                              ),
                               SizedBox(width: 10),
 
                               Text(
-                                '6 dk',
-                                style: TextStyle(color: Colors.blue),
+                                currentStory.time,
+                                style: TextStyle(color: currentStory.color),
                               ),
                             ],
                           ),
@@ -148,7 +154,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue.withOpacity(0.15),
+                          color: currentStory.color.withOpacity(0.15),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -159,11 +165,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                           ),
                           child: Row(
                             children: [
-                              Icon(Icons.book, color: Colors.blue),
+                              Icon(Icons.book, color: currentStory.color),
                               SizedBox(width: 10),
                               Text(
-                                '3 bölüm',
-                                style: TextStyle(color: Colors.blue),
+                                currentStory.section,
+                                style: TextStyle(color: currentStory.color),
                               ),
                             ],
                           ),
@@ -173,12 +179,12 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.blue,
+                          color: currentStory.color,
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'KH',
+                            currentStory.shortName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -213,11 +219,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                         padding: const EdgeInsets.only(left: 16.0, top: 16.0),
                         child: Row(
                           children: [
-                            Icon(Icons.book, color: Colors.blue),
+                            Icon(Icons.book, color: currentStory.color),
                             Text(
                               'Hikaye',
                               style: TextStyle(
-                                color: Colors.blue,
+                                color: currentStory.color,
                                 fontSize: 18,
                               ),
                             ),
@@ -227,7 +233,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          'Keloğlan bir sabah pazara giderken yolda Nasreddin Hoca ile karşılaşır.Hoca her zamanaki gibi gülümseyerek ona bugün aklını kalbinle birlikte kullanmasını öğütler. İkili köydeki anlaşmazlığı çözmek için küçük bir yolculuğa çıkar.Keloğlan cesarityle,Hoca ise nükteli sözleriyle herkesi aynı sofrada buluşturur. Gün sonunda Keloğlan sunu anlar: Gerçek bilgelik sadece çok bilmek değil, doğru zamanda doğru sözü de söyleyebilmektir.',
+                          currentStory.story,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -241,18 +247,18 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: currentStory.color,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
                 ),
                 onPressed: () async {
                   await FavoritesService.toggleFavorite(
-                    title: 'Nasreddin Hoca',
+                    title: currentStory.name,
                     type: 'Hikaye',
-                    description: 'Masal',
+                    description: currentStory.category,
                     asset: 'assets/icons/story.png',
-                    color: Colors.blue.shade300,
+                    color: currentStory.color,
                   );
                   if (!mounted) return;
                   await loadFavorites();
@@ -260,7 +266,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                 icon: Icon(
                   favorites.any(
                         (f) =>
-                            f["title"] == 'Nasreddin Hoca' &&
+                            f["title"] == currentStory.name &&
                             f["type"] == "Hikaye",
                       )
                       ? Icons.favorite
@@ -268,7 +274,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                   color:
                       favorites.any(
                         (f) =>
-                            f["title"] == 'Nasreddin Hoca' &&
+                            f["title"] == currentStory.name &&
                             f["type"] == "Hikaye",
                       )
                       ? Colors.red
