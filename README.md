@@ -13,7 +13,7 @@ Lirica, edebi sözler, şiirler ve kısa düşünce metinlerini keşfetmeyi ve s
 - 🔍 Basit arama sistemi
 - 🌙 Dark / Light tema desteği
 - 📤 Sözleri paylaşma özelliği
-- 💾 Offline veri saklama (Hive)
+- 💾 Offline veri saklama (SharedPreferences)
 
 ---
 
@@ -27,8 +27,9 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
 
 - Flutter
 - Dart
-- Hive (local database)
-- Material Design
+- SharedPreferences (local database)
+- Material Desig
+- Object Orianted Programing
 
 ---
 
