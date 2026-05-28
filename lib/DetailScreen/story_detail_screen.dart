@@ -59,7 +59,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Icon(Icons.arrow_back_ios),
+                        child: Icon(Icons.arrow_back_ios, color: Colors.white),
                       ),
                     ),
                     Spacer(),
@@ -109,7 +109,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color(0xFF2A2A2A),
+                  color: Color(0xFF1E1E1E),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.07),
+                    width: 1,
+                  ),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
@@ -179,7 +183,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: currentStory.color,
+                          color: currentStory.color.withOpacity(0.5),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -204,7 +208,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Color(0xFF2A2A2A),
+                    color: Color(0xFF1E1E1E),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.07),
+                      width: 1,
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
@@ -247,7 +255,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
-                  backgroundColor: currentStory.color,
+                  backgroundColor: currentStory.color.withOpacity(0.25),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

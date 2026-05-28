@@ -41,33 +41,63 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
       <img src="./screenshots/HomeScreen.png" width="220">
     </td>
     <td align="center">
-      <b>Sözler Sayfası</b><br><br>
-      <img src="./screenshots/WordScreen.png" width="220">
+      <b>Sözler Kategori Sayfası</b><br><br>
+      <img src="./screenshots/WordsCategoryScreen.png" width="220">
     </td>
     <td align="center">
-      <b>Şiir Sayfası</b><br><br>
+      <b>Sözler Sayfasy</b><br><br>
+      <img src="./screenshots/WordsDetailScreen.png" width="220">
+    </td>
+
+  </tr>
+    <tr>
+    <td align="center">
+      <b>Şiirler Kategori Sayfası</b><br><br>
+      <img src="./screenshots/PoetryCategoryScreen.png" width="220">
+    </td>
+    <td align="center">
+      <b>Şiirler Sayfası</b><br><br>
+      <img src="./screenshots/PoetryDetailScreen.png" width="220">
+    </td>
+    <td align="center">
+      <b>Şairler Ve Yazarlar Sayfası</b><br><br>
       <img src="./screenshots/PoetScreen.png" width="220">
     </td>
   </tr>
 
   <tr>
     <td align="center">
-      <b>Story Sayfası 1</b><br><br>
-      <img src="./screenshots/StoryScreen1.png" width="220">
+      <b>Şairler Ve Yazarlar Detay Sayfası</b><br><br>
+      <img src="./screenshots/PoetDetailScreen.png" width="220">
     </td>
     <td align="center">
-      <b>Story Sayfası 2</b><br><br>
-      <img src="./screenshots/StoryScreen2.png" width="220">
+      <b>Hikaye Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreen.png" width="220">
     </td>
     <td align="center">
-      <b>Kitaplar Sayfası</b><br><br>
+      <b>Hikaye Detay Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreenDetail.png" width="220">
+    </td>
+  </tr>
+
+   <tr>
+    <td align="center">
+      <b>Kitaplar Kategori Sayfası</b><br><br>
       <img src="./screenshots/BookScreen.png" width="220">
+    </td>
+    <td align="center">
+      <b>Kitaplar Detay Sayfası</b><br><br>
+      <img src="./screenshots/BookScreenDetail.png" width="220">
+    </td>
+    <td align="center">
+      <b>Deyimler Ve Atasözleri Sayfası</b><br><br>
+      <img src="./screenshots/ProverbScreen.png" width="220">
     </td>
   </tr>
 
   <tr>
     <td align="center">
-      <b>Favoriler Sayfası</b><br><br>
+      <b>Favori Sayfası</b><br><br>
       <img src="./screenshots/FavoriteScreen.png" width="220">
     </td>
   </tr>

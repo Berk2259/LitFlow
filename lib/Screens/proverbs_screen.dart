@@ -56,7 +56,9 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: isSelected ? Colors.pink.shade400 : Colors.grey.shade900,
+          color: isSelected
+              ? Colors.pink.shade400.withOpacity(0.25)
+              : Colors.grey.shade900,
           border: Border.all(
             color: isSelected ? Colors.pink.shade400 : Colors.grey,
             width: 1,
@@ -124,7 +126,7 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                       padding: const EdgeInsets.only(right: 16.0),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.pink.shade300,
+                          color: Colors.pink.shade300.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
@@ -255,7 +257,7 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                                   topLeft: Radius.circular(20),
                                   bottomLeft: Radius.circular(20),
                                 ),
-                                color: Colors.pink.shade300,
+                                color: Colors.pink.shade300.withOpacity(0.5),
                               ),
                             ),
                             // İçerik alanı
@@ -266,7 +268,11 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                                     topRight: Radius.circular(20),
                                     bottomRight: Radius.circular(20),
                                   ),
-                                  color: Color(0xFF2A2A2A),
+                                  color: Color(0xFF1E1E1E),
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(0.07),
+                                    width: 1,
+                                  ),
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26,
@@ -341,7 +347,8 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(8),
-                                                color: Colors.pink.shade300,
+                                                color: Colors.pink.shade300
+                                                    .withOpacity(0.25),
                                               ),
                                               child: Padding(
                                                 padding:
@@ -354,7 +361,7 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                                                   style: TextStyle(
                                                     fontSize: 11,
                                                     fontWeight: FontWeight.w500,
-                                                    color: Colors.white,
+                                                    color: Colors.pink,
                                                   ),
                                                 ),
                                               ),
@@ -370,7 +377,8 @@ class _ProverbsScreenState extends State<ProverbsScreen> {
                                             type: proverb.kategori,
                                             description: proverb.description,
                                             asset: 'assets/icons/write.png',
-                                            color: Colors.pink.shade300,
+                                            color: Colors.pink.shade300
+                                                .withOpacity(0.5),
                                           );
                                           if (!mounted) return;
                                           await loadFavorites();

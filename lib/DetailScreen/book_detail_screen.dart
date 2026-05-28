@@ -56,56 +56,69 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                   if (isLeft)
                     TopSection(
                       currentBook: currentBook,
-                      themeColor: widget.themeColor,
-                      blurColor: widget.blurColor,
+                      themeColor: widget.themeColor.withOpacity(0.25),
+                      blurColor: widget.blurColor.withOpacity(0.25),
                       icon: widget.icon,
                       alignment: MainAxisAlignment.start,
                     )
                   else
                     TopSection(
                       currentBook: currentBook,
-                      themeColor: widget.themeColor,
-                      blurColor: widget.blurColor,
+                      themeColor: widget.themeColor.withOpacity(0.25),
+                      blurColor: widget.blurColor.withOpacity(0.25),
                       icon: widget.icon,
                       alignment: MainAxisAlignment.end,
                     ),
 
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xFF2A2A2A),
-                      border: Border(
-                        left: BorderSide(color: widget.themeColor, width: 5),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xFF1E1E1E),
+                        border: Border(
+                          left: BorderSide(
+                            color: widget.themeColor.withOpacity(0.25),
+                            width: 5,
+                          ),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 8,
+                            offset: Offset(0, 6),
+                          ),
+                        ],
                       ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 16.0,
-                            left: 16.0,
-                            bottom: 8.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 16.0,
+                              left: 16.0,
+                              bottom: 8.0,
+                            ),
+                            child: Icon(
+                              Icons.format_quote_rounded,
+                              color: widget.themeColor,
+                              size: 30,
+                            ),
                           ),
-                          child: Icon(
-                            Icons.format_quote_rounded,
-                            color: widget.themeColor,
-                            size: 30,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 16.0,
+                              right: 16.0,
+                              bottom: 16.0,
+                            ),
+                            child: Text(
+                              currentBook.description,
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 16.0,
-                            right: 16.0,
-                            bottom: 16.0,
-                          ),
-                          child: Text(
-                            currentBook.description,
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Row(
@@ -115,7 +128,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: widget.themeColor,
+                            color: widget.themeColor.withOpacity(0.25),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -126,7 +139,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                             ),
                             child: Text(
                               '${currentBook.pageNo} sayfa',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: widget.themeColor),
                             ),
                           ),
                         ),
@@ -139,7 +152,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                             type: 'Kitap',
                             description: currentBook.author,
                             asset: 'assets/icons/bookshelf.png',
-                            color: Colors.purple.shade300,
+                            color: Colors.purple.shade300.withOpacity(0.5),
                           );
                           if (!mounted) return;
                           await loadFavorites();
@@ -230,7 +243,6 @@ class TopSection extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 16),
                         child: Text(
                           currentBook.name,
-
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -255,7 +267,7 @@ class TopSection extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: themeColor,
-                    boxShadow: [BoxShadow(color: blurColor, blurRadius: 8)],
+                    boxShadow: [BoxShadow(color: blurColor)],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -270,7 +282,7 @@ class TopSection extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: themeColor,
-                    boxShadow: [BoxShadow(color: blurColor, blurRadius: 8)],
+                    boxShadow: [BoxShadow(color: blurColor)],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

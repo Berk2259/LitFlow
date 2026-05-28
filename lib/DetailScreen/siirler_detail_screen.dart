@@ -37,7 +37,7 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0, top: 16),
               child: Row(
                 children: [
                   GestureDetector(
@@ -77,7 +77,7 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xFFFFE066),
+                        color: Colors.amber.shade300.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
@@ -104,7 +104,11 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        color: Color(0xFF2A2A2A),
+                        color: Color(0xFF1E1E1E),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.07),
+                          width: 1,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black26,
@@ -178,17 +182,21 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                                       title: siir.title,
                                       type: 'Şiir',
                                       asset: 'assets/icons/poetry.png',
-                                      color: Colors.amber,
-                                      description: siir.author
+                                      color: Colors.amber.shade300.withOpacity(
+                                        0.5,
+                                      ),
+                                      description: siir.author,
                                     );
 
                                     if (!mounted) return;
-                                  
+
                                     await loadFavorites();
                                   },
                                   icon: Icon(
                                     favorites.any(
-                                          (f) => f["title"] == siir.title && f["type"] == "Şiir",
+                                          (f) =>
+                                              f["title"] == siir.title &&
+                                              f["type"] == "Şiir",
                                         )
                                         ? Icons.favorite
                                         : Icons.favorite_border,
@@ -204,7 +212,7 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                             ),
                           ],
                         ),
-                      ), 
+                      ),
                     ),
                   );
                 },

@@ -98,7 +98,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
         HikayeContainer(
           title: 'Pinakyo',
           description: 'Masal - İtalya',
-          shortDescription: 'P',
+          shortDescription: 'PK',
           category: 'Masal',
           color: Colors.orange,
           time: '12 dk',
@@ -195,7 +195,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                         padding: const EdgeInsets.only(right: 16.0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.blue.shade300,
+                            color: Colors.blue.shade300.withOpacity(0.25),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
@@ -415,110 +415,109 @@ class HikayeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          margin: EdgeInsets.all(4),
-          width: double.infinity,
-          height: 90,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        margin: EdgeInsets.all(4),
+        width: double.infinity,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+          color: Color(0xFF1E1E1E),
+          border: Border(
+            left: BorderSide(color: color.withOpacity(0.5), width: 5),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 8,
+              offset: Offset(0, 6),
             ),
-            color: Color(0xFF2A2A2A),
-            border: Border(left: BorderSide(color: color, width: 5)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 8,
-                offset: Offset(0, 6),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withOpacity(0.5),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    shortDescription,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    Text(
+                      description,
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: color.withOpacity(0.25),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 8.0,
+                              right: 8.0,
+                              top: 1,
+                              bottom: 1,
+                            ),
+                            child: Text(
+                              category,
+                              style: TextStyle(color: color),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 16),
+                        Row(
+                          children: [
+                            Icon(Icons.access_time, size: 16, color: color),
+                            SizedBox(width: 8),
+                            Text(time, style: TextStyle(color: color)),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => screen),
+                    );
+                  },
+                  icon: Icon(Icons.arrow_circle_right_outlined, color: color),
+                ),
               ),
             ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16),
-            child: Row(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: color,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      shortDescription,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                      Text(
-                        description,
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: color,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 8.0,
-                                right: 8.0,
-                                top: 1,
-                                bottom: 1,
-                              ),
-                              child: Text(
-                                category,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 5),
-                          Row(
-                            children: [
-                              Icon(Icons.access_time, size: 16, color: color),
-                              SizedBox(width: 8),
-                              Text(time, style: TextStyle(color: color)),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(right: 16.0),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => screen),
-                      );
-                    },
-                    icon: Icon(Icons.arrow_circle_right_outlined, color: color),
-                  ),
-                ),
-              ],
-            ),
           ),
         ),
       ),
@@ -550,7 +549,8 @@ class CategoryContainer extends StatelessWidget {
         height: 75,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Color(0xFF2A2A2A),
+          color: Color(0xFF1E1E1E),
+          border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
           boxShadow: [
             BoxShadow(
               color: Colors.black26,
@@ -566,7 +566,7 @@ class CategoryContainer extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: color,
+                  color: color.withOpacity(0.25),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -646,13 +646,18 @@ class HikayeFavContainer extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xFF2A2A2A),
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
             boxShadow: [
-              BoxShadow(color: shadow, blurRadius: 4, offset: Offset(4, 0)),
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                offset: Offset(0, 6),
+              ),
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 16),
+            padding: EdgeInsets.only(left: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

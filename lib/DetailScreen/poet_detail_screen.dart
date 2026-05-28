@@ -38,7 +38,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16),
+          padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
           child: Column(
             children: [
               Row(
@@ -85,7 +85,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.green.shade300,
+                        color: Colors.green.shade300.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
@@ -101,8 +101,11 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0xFF2A2A2A),
-                  border: Border(left: BorderSide(color: poet.color, width: 5)),
+                  color: Color(0xFF1E1E1E),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.07),
+                    width: 1,
+                  ),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
@@ -197,7 +200,8 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                                           title: poet.name,
                                           type: 'Şair',
                                           asset: 'assets/icons/poet.png',
-                                          color: Colors.green,
+                                          color: Colors.green.shade300
+                                              .withOpacity(0.5),
                                           description: poet.description,
                                         );
 
@@ -238,10 +242,14 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                 padding: const EdgeInsets.only(top: 8),
                 child: Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.06,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Color(0xFF2A2A2A),
+                    color: Color(0xFF1E1E1E),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.07),
+                      width: 1,
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
@@ -283,7 +291,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: isSelected ? color : Color(0xFF2A2A2A),
+              color: isSelected ? color : Color(0xFF1E1E1E),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -308,7 +316,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFF2A2A2A),
+              color: Color(0xFF1E1E1E),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -365,7 +373,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFF2A2A2A),
+              color: Color(0xFF1E1E1E),
 
               boxShadow: [
                 BoxShadow(
@@ -437,7 +445,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFF2A2A2A),
+              color: Color(0xFF1E1E1E),
 
               boxShadow: [
                 BoxShadow(

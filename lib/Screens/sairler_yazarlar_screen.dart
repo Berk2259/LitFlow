@@ -165,7 +165,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16),
+          padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -209,7 +209,7 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
                       padding: const EdgeInsets.only(right: 16.0),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.green.shade300,
+                          color: Colors.green.shade300.withOpacity(0.25),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
@@ -426,7 +426,7 @@ class SairlerYazarlarContainer extends StatelessWidget {
             width: 4,
             height: 80,
             decoration: BoxDecoration(
-              color: color,
+              color: color.withOpacity(0.5),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(100),
                 bottomLeft: Radius.circular(100),
@@ -441,7 +441,11 @@ class SairlerYazarlarContainer extends StatelessWidget {
                   topRight: Radius.circular(20),
                   bottomRight: Radius.circular(20),
                 ),
-                color: Color(0xFF2A2A2A),
+                color: Color(0xFF1E1E1E),
+                border: Border.all(
+                  color: Colors.white.withOpacity(0.07),
+                  width: 1,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
@@ -457,7 +461,7 @@ class SairlerYazarlarContainer extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: color,
+                        color: color.withOpacity(0.5),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -478,7 +482,7 @@ class SairlerYazarlarContainer extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                              color: color,
+                              color: color.withOpacity(0.25),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Padding(
@@ -490,7 +494,7 @@ class SairlerYazarlarContainer extends StatelessWidget {
                               ),
                               child: Text(
                                 kategori,
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: color),
                               ),
                             ),
                           ),
@@ -533,4 +537,3 @@ class SairlerYazarlarContainer extends StatelessWidget {
     );
   }
 }
-

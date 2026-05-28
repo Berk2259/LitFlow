@@ -36,7 +36,7 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0, top: 16),
               child: Row(
                 children: [
                   GestureDetector(
@@ -76,7 +76,7 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.red.shade300,
+                        color: Colors.red.shade300.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
@@ -100,7 +100,11 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color(0xFF2A2A2A),
+                        color: Color(0xFF1E1E1E),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.07),
+                          width: 1,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black26,
@@ -170,7 +174,9 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                                         type: 'Söz',
                                         description: ozlu_sozler.author,
                                         asset: 'assets/icons/soz.png',
-                                        color: Colors.red.shade300,
+                                        color: Colors.red.shade300.withOpacity(
+                                          0.5,
+                                        ),
                                       );
                                       if (!mounted) return;
                                       await loadFavorites();

@@ -97,7 +97,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.blue.shade300,
+                      color: Colors.teal.shade300.withOpacity(0.25),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -146,6 +146,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 16),
               Expanded(
                 child: filteredFavorites.isEmpty
                     ? Center(
@@ -159,7 +160,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                         itemBuilder: (context, index) {
                           final item = filteredFavorites[index];
                           return Padding(
-                            padding: const EdgeInsets.only(top: 16.0),
+                            padding: const EdgeInsets.only(top: 8.0),
                             child: Container(
                               width: double.infinity,
                               height: 80,
@@ -168,7 +169,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   topRight: Radius.circular(20),
                                   bottomRight: Radius.circular(20),
                                 ),
-                                color: Color(0xFF2A2A2A),
+                                color: Color(0xFF1E1E1E),
                                 border: Border(
                                   left: BorderSide(
                                     color: item['color'] is Color
@@ -317,7 +318,17 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: isSelected ? Colors.blue : Colors.grey.shade800,
+            color: isSelected
+                ? Colors.teal.shade300.withOpacity(0.25)
+                : Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                offset: Offset(0, 6),
+              ),
+            ],
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

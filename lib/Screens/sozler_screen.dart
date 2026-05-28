@@ -12,7 +12,7 @@ class SozlerScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0, top: 16.0),
               child: Row(
                 children: [
                   GestureDetector(
@@ -51,7 +51,7 @@ class SozlerScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.red.shade300,
+                        color: Colors.red.shade300.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
@@ -205,7 +205,7 @@ class KategoriContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8),
       child: GestureDetector(
         onTap: onfunction,
         child: Container(
@@ -213,7 +213,8 @@ class KategoriContainer extends StatelessWidget {
           height: 75,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xFF2A2A2A),
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -229,11 +230,11 @@ class KategoriContainer extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: color,
+                    color: color.withOpacity(0.15),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(icon, scale: 18, color: Colors.white),
+                    child: Image.asset(icon, scale: 18, color: color),
                   ),
                 ),
                 SizedBox(width: 10),

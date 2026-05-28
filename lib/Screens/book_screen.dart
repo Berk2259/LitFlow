@@ -14,16 +14,61 @@ class BookScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Text(
-                  'Kategoriler',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                padding: const EdgeInsets.only(left: 16.0, top: 16.0),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Colors.white,
+                        size: 22,
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Kitaplar',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          'Kategoriler',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white.withValues(alpha: 0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.purple.shade300.withOpacity(0.25),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'assets/icons/bookshelf.png',
+                            scale: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              Divider(endIndent: 16, indent: 16, thickness: 1),
               BookContainer(
                 icon: 'assets/icons/detective.png',
                 title: 'Polisiye',
@@ -144,7 +189,7 @@ class BookScreen extends StatelessWidget {
                         category: 'Tarih',
                         themeColor: Colors.pink,
                         icon: 'assets/icons/pillar.png',
-                        blurColor:Colors.pink.shade300,
+                        blurColor: Colors.pink.shade300,
                       ),
                     ),
                   );
@@ -213,7 +258,7 @@ class BookContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 12.0),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
       child: GestureDetector(
         onTap: onfunction,
         child: Container(
@@ -221,12 +266,13 @@ class BookContainer extends StatelessWidget {
           height: 70,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xFF2A2A2A),
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
                 blurRadius: 8,
-                offset: Offset(0, 8),
+                offset: Offset(0, 6),
               ),
             ],
           ),
@@ -236,7 +282,7 @@ class BookContainer extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: iconColor,
+                    color: iconColor.withOpacity(0.25),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(

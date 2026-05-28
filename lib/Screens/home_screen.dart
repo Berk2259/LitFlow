@@ -105,21 +105,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: 'Edebi Sözler',
                         description: 'Özlü Sözler',
                         icon: 'assets/icons/soz.png',
-                        iconColor: Color(0xFFFF8A8A),
+                        iconColor: Colors.red.shade300,
                         screen: SozlerScreen(),
                       ),
                       PopularContainer(
                         title: 'Şiirler',
                         description: 'Şiir Arşivi',
                         icon: 'assets/icons/poetry.png',
-                        iconColor: Color(0xFFFFE066),
+                        iconColor: Colors.amber.shade300,
                         screen: SiirlerScreen(),
                       ),
                       PopularContainer(
                         title: 'Kitaplar',
                         description: 'Kitap Listesi',
                         icon: 'assets/icons/bookshelf.png',
-                        iconColor: Color(0xFFB895FF),
+                        iconColor: Colors.purple.shade300,
                         screen: BookScreen(),
                       ),
                     ],
@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeContainer(
                     title: 'Edebi Sözler',
                     description: 'Edebi Sözleri görüntülemek için tıklayın',
-                    iconColor: Color(0xFFFF8A8A),
+                    iconColor: Colors.red.shade300,
                     icon: 'assets/icons/soz.png',
                     onfunction: () {
                       Navigator.push(
@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeContainer(
                     title: 'Şiirler',
                     description: 'Şiirleri görüntülemek için tıklayın',
-                    iconColor: Color(0xFFFFE066),
+                    iconColor: Colors.amber.shade300,
                     icon: 'assets/icons/poetry.png',
                     onfunction: () {
                       Navigator.push(
@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Şairler ve Yazarlar',
                     description:
                         'Şairleri ve Yazarları görüntülemek için tıklayın',
-                    iconColor: Color(0xFF8FDD9C),
+                    iconColor: Colors.green.shade300,
                     icon: 'assets/icons/poet.png',
                     onfunction: () {
                       Navigator.push(
@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeContainer(
                     title: 'Hikayeler',
                     description: 'Hikayeleri görüntülemek için tıklayın',
-                    iconColor: Color(0xFF7DB3FF),
+                    iconColor: Colors.blue.shade300,
                     icon: 'assets/icons/story.png',
                     onfunction: () {
                       Navigator.push(
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeContainer(
                     title: 'Kitaplar',
                     description: 'Hikayeleri görüntülemek için tıklayın',
-                    iconColor: Color(0xFFB895FF),
+                    iconColor: Colors.purple.shade300,
                     icon: 'assets/icons/bookshelf.png',
                     onfunction: () {
                       Navigator.push(
@@ -217,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Deyimler ve Atasözleri',
                     description:
                         'Deyimler ve Atasözlerini görüntülemek için tıklayın',
-                    iconColor: Color(0xFFFF5599),
+                    iconColor: Colors.pink.shade300,
                     icon: 'assets/icons/write.png',
                     onfunction: () {
                       Navigator.push(
@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Favoriler',
                     description:
                         'Favoriye Alınanları görüntülemek için tıklayın',
-                    iconColor: Color(0xFF66E6FF),
+                    iconColor: Colors.teal.shade300,
                     icon: 'assets/icons/heart.png',
                     onfunction: () {
                       Navigator.push(
@@ -284,7 +284,15 @@ class PopularContainer extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xFF2A2A2A),
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                offset: Offset(0, 6),
+              ),
+            ],
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 16.0),
@@ -295,7 +303,7 @@ class PopularContainer extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: iconColor,
+                    color: iconColor.withOpacity(0.25),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -347,8 +355,8 @@ class HomeContainer extends StatelessWidget {
           height: 70,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xFF2A2A2A),
-
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -364,7 +372,7 @@ class HomeContainer extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: iconColor,
+                    color: iconColor.withOpacity(0.25),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
