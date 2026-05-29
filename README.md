@@ -46,7 +46,7 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
       <img src="./screenshots/WordsCategoryScreen.png" width="220">
     </td>
     <td align="center">
-      <b>Sözler Sayfasyı</b><br><br>
+      <b>Sözler Sayfası</b><br><br>
       <img src="./screenshots/WordsDetailScreen.png" width="220">
     </td>
     <td align="center">
