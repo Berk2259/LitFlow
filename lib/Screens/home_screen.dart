@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      'Lirica',
+                      'LitFlow',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       PopularContainer(
-                        title: 'Edebi Sözler',
+                        title: 'Sözler',
                         description: 'Özlü Sözler',
                         icon: 'assets/icons/soz.png',
                         iconColor: Colors.red.shade300,
@@ -136,10 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                if (searchQuery.isEmpty || 'edebi sözler'.contains(searchQuery))
+                if (searchQuery.isEmpty || 'sözler'.contains(searchQuery))
                   HomeContainer(
-                    title: 'Edebi Sözler',
-                    description: 'Edebi Sözleri görüntülemek için tıklayın',
+                    title: 'Sözler',
+                    description: 'Sözleri görüntülemek için tıklayın',
                     iconColor: Colors.red.shade300,
                     icon: 'assets/icons/soz.png',
                     onfunction: () {

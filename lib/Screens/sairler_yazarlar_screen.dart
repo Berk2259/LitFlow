@@ -98,22 +98,22 @@ class _SairlerYazarlarScreenState extends State<SairlerYazarlarScreen> {
           screen: PoetDetailScreen(name: 'William Shakespeare'),
         ),
       if (searchQuery.isEmpty ||
-          'Fyodor Dostoevsky'.toLowerCase().contains(searchQuery))
+          'Fyodor Dostoyevski'.toLowerCase().contains(searchQuery))
         SairlerYazarlarContainer(
-          title: 'Fyodor Dostoevsky',
+          title: 'Fyodor Dostoyevski',
           color: Colors.deepOrange.shade300,
           name: 'FD',
           kategori: 'Dünya',
-          screen: PoetDetailScreen(name: 'Fyodor Dostoevsky'),
+          screen: PoetDetailScreen(name: 'Fyodor Dostoyevski'),
         ),
       if (searchQuery.isEmpty ||
-          'Leo Tolstoy'.toLowerCase().contains(searchQuery))
+          'Lev Tolstoy'.toLowerCase().contains(searchQuery))
         SairlerYazarlarContainer(
-          title: 'Leo Tolstoy',
+          title: 'Lev Tolstoy',
           color: Colors.red.shade300,
           name: 'LT',
           kategori: 'Dünya',
-          screen: PoetDetailScreen(name: 'Leo Tolstoy'),
+          screen: PoetDetailScreen(name: 'Lev Tolstoy'),
         ),
       if (searchQuery.isEmpty ||
           'Franz Kafka'.toLowerCase().contains(searchQuery))

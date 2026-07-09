@@ -30,7 +30,7 @@ class SozlerScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Edebi Sözler',
+                        'Sözler',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
