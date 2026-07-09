@@ -136,6 +136,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   child: Row(
                     children: [
                       _categoryButton('Tümü'),
+                      _categoryButton('Şair'),
                       _categoryButton('Söz'),
                       _categoryButton('Şiir'),
                       _categoryButton('Hikaye'),
