@@ -42,6 +42,75 @@ List<Siirler> siirler = [
     color: Colors.green,
   ),
   Siirler(
+    id: 2,
+    text: [
+      'Aşk imiş her ne var âlemde',
+      'İlm bir kıyl ü kal imiş ancak',
+      'Gönül verdiğim güzel yüzündür',
+      'Derdime derman yine aşkındır',
+    ],
+    author: 'Fuzûlî',
+    kategori: 'Aşk',
+    title: 'Aşk İmiş',
+    color: Colors.red,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Ben melâmet hırkasını kendim giydim eyledim',
+      'Aşk yolunda canımı bir pula saydım eyledim',
+      'Gönlümün tahtında yalnız sen varsın ey sevgili',
+      'Sensiz geçen günlerimi ömürden saymadım',
+    ],
+    author: 'Karacaoğlan',
+    kategori: 'Aşk',
+    title: 'Aşk Yolu',
+    color: Colors.green,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Gidelim serv-i revanım yürü Sa’dâbâd’a',
+      'İşte üç çifte kayık ile alınmış karar',
+      'Gönlümüz şen olur sevgilinin yanında',
+      'Aşk ile geçer bütün güzel zamanlar',
+    ],
+    author: 'Nedim',
+    kategori: 'Aşk',
+    title: 'Gazel',
+    color: Colors.purple,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Avazeyi bu âleme Davud gibi sal',
+      'Bâki kalan bu kubbede bir hoş sada imiş',
+      'Geçer zaman, kalır geriye sevgi',
+      'Hatıralar gönüllerde yaşamaya devam eder',
+    ],
+    author: 'Bâkî',
+    kategori: 'Aşk',
+    title: 'Hoş Sada',
+    color: Colors.blue,
+  ),
+
+  Siirler(
+    id: 6,
+    text: [
+      'Aşkın ile âşıklar yansın ya Resulallah',
+      'İçip aşkın şarabın kansın ya Resulallah',
+      'Sevda ile doludur gönlümün her köşesi',
+      'Aşkın ışığıyla aydınlansın geceler',
+    ],
+    author: 'Niyazi-i Mısrî',
+    kategori: 'Aşk',
+    title: 'Aşkın Şarabı',
+    color: Colors.orange,
+  ),
+  Siirler(
     id: 1,
     text: [
       'Elimde sukutun nabzını dinle.',
@@ -76,6 +145,85 @@ List<Siirler> siirler = [
     color: Colors.red,
   ),
   Siirler(
+    id: 2,
+    text: [
+      'Bir sessizlik kaldı senden geriye.',
+      'Duvarlarda eski bir hatıra gibi.',
+      'Gidişin bir sonbahar akşamıydı.',
+      'Yapraklar gibi düştü kalbime.',
+      'Ne seni unuttum ne de bekledim.',
+      'Sadece alıştım yokluğuna.',
+    ],
+    author: 'Özgün',
+    kategori: 'Ayrılık',
+    title: 'Sessiz Gidiş',
+    color: Colors.blueGrey,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Bir bavula sığmadı hatıralarımız.',
+      'Giderken aldığın sadece eşyaların değildi.',
+      'Bir parçamı da götürdün fark etmeden.',
+      'Şimdi yollar uzun, geceler daha sessiz.',
+      'Adını anmadan geçiyor günler.',
+      'Ama kalbim hâlâ seni hatırlıyor.',
+    ],
+    author: 'Özgün',
+    kategori: 'Ayrılık',
+    title: 'Son Veda',
+    color: Colors.indigo,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Gözlerin uzak bir şehir artık.',
+      'Sesin eski bir şarkı gibi.',
+      'Dokunamadığım bir hayalsin.',
+      'Zaman geçiyor, izlerin kalıyor.',
+      'Belki bir gün karşılaşırız.',
+      'Ama aynı insanlar olmayız.',
+    ],
+    author: 'Özgün',
+    kategori: 'Ayrılık',
+    title: 'Uzaklarda',
+    color: Colors.purple,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Sana kalan birkaç anı oldu.',
+      'Bana kalan koca bir sessizlik.',
+      'Birlikte yürüdüğümüz yollar',
+      'Şimdi yalnızlığımı taşıyor.',
+      'Ayrılık bazen gitmek değil.',
+      'Kalırken kaybetmektir.',
+    ],
+    author: 'Özgün',
+    kategori: 'Ayrılık',
+    title: 'Kalan Sessizlik',
+    color: Colors.grey,
+  ),
+
+  Siirler(
+    id: 6,
+    text: [
+      'Son kez baktım ardından.',
+      'Bir umut sakladım içimde.',
+      'Belki dönersin diye değil.',
+      'Seni sevdiğimi unutmayayım diye.',
+      'Bazı insanlar gider.',
+      'Ama bıraktıkları hiç gitmez.',
+    ],
+    author: 'Özgün',
+    kategori: 'Ayrılık',
+    title: 'Ardından',
+    color: Colors.redAccent,
+  ),
+  Siirler(
     id: 1,
     text: [
       'Sevinci kapıştılar taşımayı bilmeden,',
@@ -102,6 +250,81 @@ List<Siirler> siirler = [
     color: Colors.red,
   ),
   Siirler(
+    id: 2,
+    text: [
+      'Akşam iner sessizce pencereme,',
+      'Bir eski şarkı çalar uzaklarda.',
+      'Hatıralar gelir oturur yanıma,',
+      'Kimse bilmez içimdeki yalnızlığı.',
+
+      'Bir damla gözyaşı düşer zamana.',
+      'Söylenmemiş sözler kalır geriye.',
+      'Hüzün bazen bir vedadır sessizce,',
+      'Bazen de saklanan bir sevgidir kalpte.',
+    ],
+    author: 'Özgün',
+    kategori: 'Hüzün',
+    title: 'Sessiz Akşam',
+    color: Colors.blueGrey,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Bir rüzgâr geçti eski günlerden,',
+      'Savurdu anılarımı uzaklara.',
+      'Geriye kalan sadece birkaç izdi,',
+      'Bir de dinmeyen özlem içimde.',
+
+      'Gülüşler kaldı eski fotoğraflarda.',
+      'Sesler kayboldu boş sokaklarda.',
+      'Bazen insan en çok kendine küser,',
+      'Kendi içinde büyüttüğü yaralarda.',
+    ],
+    author: 'Özgün',
+    kategori: 'Hüzün',
+    title: 'Eski Günler',
+    color: Colors.indigo,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Gece yine sessizliğe büründü.',
+      'Yıldızlar bile uzak bugün.',
+      'Bir eksiklik var kalbimde.',
+      'Adını koyamadığım bir hüzün.',
+
+      'Beklemekten yorulmadı gözlerim.',
+      'Ama yollar hep aynı kaldı.',
+      'Bazı insanlar giderken',
+      'Yanında umutları da götürür.',
+    ],
+    author: 'Özgün',
+    kategori: 'Hüzün',
+    title: 'Adını Koyamadığım',
+    color: Colors.purple,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Yağmur yağar eski kaldırımlara.',
+      'Her damlada bir anı saklıdır.',
+      'Geçmiş geçip gitmez aslında,',
+      'Sadece sessizce uzaklaşır.',
+
+      'Bir gün dönüp bakarsın geriye.',
+      'Ne kalan vardır ne de giden.',
+      'Sadece kalbinde taşıdığın',
+      'Yarım kalmış hikâyeler.',
+    ],
+    author: 'Özgün',
+    kategori: 'Hüzün',
+    title: 'Yarım Hikâyeler',
+    color: Colors.grey,
+  ),
+  Siirler(
     id: 1,
     text: [
       'Maruzatım odur ki;en iyi bir dostsun',
@@ -125,6 +348,81 @@ List<Siirler> siirler = [
     color: Colors.red,
   ),
   Siirler(
+    id: 2,
+    text: [
+      'Bir dost vardır, sessizliğini bile anlar.',
+      'Konuşmadan yanında olmayı bilir.',
+      'Düştüğünde elinden tutar gizlice.',
+      'Mutluluğunda senden çok sevinir.',
+
+      'Yollar değişse de unutmaz seni.',
+      'Mesafeler sevgiyi azaltmaz.',
+      'Gerçek dostluk bir ağaç gibidir.',
+      'Kökleri derinde, gölgesi sonsuzdur.',
+    ],
+    author: 'Özgün',
+    kategori: 'Dostluk',
+    title: 'Gerçek Dost',
+    color: Colors.green,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Bir kahve sohbetinde saklıdır bazen.',
+      'Yılların getirdiği güzel hatıralar.',
+      'Bir selam yeter yeniden başlamaya.',
+      'Çünkü dostluk uzaklık tanımaz.',
+
+      'Ne zaman daralsa insanın kalbi.',
+      'Bir dost sesi iyi gelir yaralara.',
+      'Bazı insanlar hayatımıza girer.',
+      'Ve ömür boyu kalır yanımızda.',
+    ],
+    author: 'Özgün',
+    kategori: 'Dostluk',
+    title: 'Bir Selam',
+    color: Colors.orange,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Dost dediğin yağmurda şemsiye değil.',
+      'Fırtınada yanında duran limandır.',
+      'Karanlık günlerde ışık olur.',
+      'Sessiz gecelerde umut taşır.',
+
+      'Paylaştıkça çoğalır güzel anılar.',
+      'Gülüşlerde saklanır eski günler.',
+      'Bir dostun varsa yanında eğer.',
+      'Dünya biraz daha güzeldir.',
+    ],
+    author: 'Özgün',
+    kategori: 'Dostluk',
+    title: 'Dostun Yeri',
+    color: Colors.blue,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Yıllar geçer, yollar değişir.',
+      'Ama bazı isimler kalır kalpte.',
+      'Çocuklukta başlayan bir hikâye.',
+      'Ömür boyu sürer sessizce.',
+
+      'Ne zaman hatırlasan geçmişi.',
+      'Bir tebessüm düşer yüzüne.',
+      'Çünkü gerçek dostluk dediğin.',
+      'Zamanla değil sevgiyle büyür.',
+    ],
+    author: 'Özgün',
+    kategori: 'Dostluk',
+    title: 'Eski Bir Dost',
+    color: Colors.teal,
+  ),
+  Siirler(
     id: 1,
     text: [
       'Güzü duymıyagörsün ağaç,',
@@ -141,6 +439,81 @@ List<Siirler> siirler = [
     kategori: 'Doğa',
     title: 'Islık',
     color: Colors.red,
+  ),
+  Siirler(
+    id: 2,
+    text: [
+      'Sabahın ilk ışığı düşer yapraklara,',
+      'Rüzgâr usulca selam verir dallara.',
+      'Bir kuş sesi doldurur sessizliği,',
+      'Doğa anlatır kendi hikâyesini.',
+
+      'Çiçekler açar umut gibi yeniden.',
+      'Dereler akar eski bir şarkıyla.',
+      'İnsan bazen huzuru bulur,',
+      'Sadece bir ağacın gölgesinde.',
+    ],
+    author: 'Özgün',
+    kategori: 'Doğa',
+    title: 'Doğanın Sesi',
+    color: Colors.green,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Dağların ardında saklı bir sabah.',
+      'Bulutlar geçer sessiz gökyüzünden.',
+      'Toprak kokusu dolar içime.',
+      'Bir huzur doğar derinden.',
+
+      'Kelebekler dans eder çiçeklerde.',
+      'Nehirler anlatır eski masalları.',
+      'Doğa bir şiirdir aslında.',
+      'Okumasını bilenlere.',
+    ],
+    author: 'Özgün',
+    kategori: 'Doğa',
+    title: 'Toprağın Sesi',
+    color: Colors.lightGreen,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Bir yaprak düşer sonbahar akşamında.',
+      'Sessizce veda eder dalına.',
+      'Rüzgâr taşır eski kokuları.',
+      'Uzaklardan gelen bir hatıra gibi.',
+
+      'Ağaçlar bilir beklemeyi.',
+      'Çiçekler bilir yeniden doğmayı.',
+      'Doğa öğretir insana',
+      'Sabretmeyi ve yaşamayı.',
+    ],
+    author: 'Özgün',
+    kategori: 'Doğa',
+    title: 'Sonbahar Yaprağı',
+    color: Colors.orange,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Gecenin içinde parlar yıldızlar.',
+      'Ay düşer sakin sulara.',
+      'Bir sessizlik sarar dünyayı.',
+      'Doğa dinlenir karanlıkta.',
+
+      'Sabah olur yeniden uyanır hayat.',
+      'Kuşlar söyler en güzel şarkıyı.',
+      'Her gün yeniden başlar dünya.',
+      'Doğa ile birlikte.',
+    ],
+    author: 'Özgün',
+    kategori: 'Doğa',
+    title: 'Sessiz Gece',
+    color: Colors.blue,
   ),
   Siirler(
     id: 1,
@@ -164,5 +537,80 @@ List<Siirler> siirler = [
     kategori: 'Umut',
     title: 'Bir Umut',
     color: Colors.red,
+  ),
+  Siirler(
+    id: 2,
+    text: [
+      'Karanlık gecelerin ardından',
+      'Mutlaka doğar bir sabah.',
+      'Yorgun kalpler bile yeniden',
+      'Bulur kendine bir umut.',
+
+      'Bir çiçek açar taşların arasında.',
+      'Bir ışık görünür uzaklarda.',
+      'Hayat bazen fısıldar insana:',
+      'Henüz bitmedi yolun.',
+    ],
+    author: 'Özgün',
+    kategori: 'Umut',
+    title: 'Yeni Bir Sabah',
+    color: Colors.amber,
+  ),
+
+  Siirler(
+    id: 3,
+    text: [
+      'Kırılmış dallar yeniden yeşerir.',
+      'Solmuş çiçekler baharı bekler.',
+      'Her bitişin ardında saklıdır',
+      'Başka bir başlangıç.',
+
+      'Yeter ki kaybetme içindeki ışığı.',
+      'Yeter ki inan yarınlara.',
+      'Çünkü umut dediğin şey',
+      'Kalpte büyüyen bir bahardır.',
+    ],
+    author: 'Özgün',
+    kategori: 'Umut',
+    title: 'Baharı Beklerken',
+    color: Colors.green,
+  ),
+
+  Siirler(
+    id: 4,
+    text: [
+      'Bir yıldız gibi parlar uzakta.',
+      'Görünmez belki ama vardır.',
+      'En zor anlarda bile insanın',
+      'İçinde sakladığı bir güçtür.',
+
+      'Yollar uzun olabilir bazen.',
+      'Geceler ağır gelebilir.',
+      'Ama her karanlığın sonunda',
+      'Güneş yeniden doğar.',
+    ],
+    author: 'Özgün',
+    kategori: 'Umut',
+    title: 'Uzakta Bir Işık',
+    color: Colors.orange,
+  ),
+
+  Siirler(
+    id: 5,
+    text: [
+      'Düştüğün yerden kalkmayı öğren.',
+      'Çünkü hayat devam eder sessizce.',
+      'Kaybettiklerin değil,',
+      'Vazgeçmediklerin anlatır seni.',
+
+      'Bir gün gülecek yüzün yeniden.',
+      'Bir gün diner bütün acılar.',
+      'Çünkü umut vardır hâlâ',
+      'Kalbin attığı sürece.',
+    ],
+    author: 'Özgün',
+    kategori: 'Umut',
+    title: 'Vazgeçme',
+    color: Colors.lightBlue,
   ),
 ];
