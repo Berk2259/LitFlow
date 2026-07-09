@@ -23,7 +23,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'KH',
           category: 'Masal',
           color: Colors.blue,
-          time: '6 dk',
+          time: '5 dk',
           screen: StoryDetailScreen(name: 'Keleoğlan ve Nasreddin Hoca'),
         ),
       if (searchQuery.isEmpty ||
@@ -34,19 +34,19 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'DK',
           category: 'Destan',
           color: Colors.green,
-          time: '18 dk',
+          time: '8 dk',
           screen: StoryDetailScreen(name: 'Dede Korkut Hikayeleri'),
         ),
       if (searchQuery.isEmpty ||
-          'Karagöz ile Hacivat'.toLowerCase().contains(searchQuery))
+          'Karagöz ve Hacivat'.toLowerCase().contains(searchQuery))
         HikayeContainer(
-          title: 'Karagöz ile Hacivat',
+          title: 'Karagöz ve Hacivat',
           description: 'Geleneksel - Türk',
           shortDescription: 'KH',
           category: 'Geleneksel',
           color: Colors.amber,
           time: '5 dk',
-          screen: StoryDetailScreen(name: 'Karagöz ile Hacivat'),
+          screen: StoryDetailScreen(name: 'Karagöz ve Hacivat'),
         ),
       if (searchQuery.isEmpty ||
           'Fındık Kabuğunun Evi'.toLowerCase().contains(searchQuery))
@@ -56,7 +56,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'FK',
           category: 'Masal',
           color: Colors.redAccent,
-          time: '7 dk',
+          time: '4 dk',
           screen: StoryDetailScreen(name: 'Fındık Kabuğunun Evi'),
         ),
       if (searchQuery.isEmpty ||
@@ -67,7 +67,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'ÇP',
           category: 'Öykü',
           color: Colors.purpleAccent,
-          time: '10 dk',
+          time: '5 dk',
           screen: StoryDetailScreen(name: 'Çıldırmış Pendik'),
         ),
       if (searchQuery.isEmpty ||
@@ -78,7 +78,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'ZB',
           category: 'Roman',
           color: Colors.lightBlue,
-          time: '25 dk',
+          time: '6 dk',
           screen: StoryDetailScreen(name: 'Zeyno ile Babası'),
         ),
     ];
@@ -91,18 +91,18 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'KB',
           category: 'Masal',
           color: Colors.pink,
-          time: '8 dk',
+          time: '5 dk',
           screen: StoryDetailScreen(name: 'Kırmızı Başlıklı Kız'),
         ),
-      if (searchQuery.isEmpty || 'Pinakyo'.toLowerCase().contains(searchQuery))
+      if (searchQuery.isEmpty || 'Pinokyo'.toLowerCase().contains(searchQuery))
         HikayeContainer(
-          title: 'Pinakyo',
+          title: 'Pinokyo',
           description: 'Masal - İtalya',
           shortDescription: 'PK',
           category: 'Masal',
           color: Colors.orange,
-          time: '12 dk',
-          screen: StoryDetailScreen(name: 'Pinakyo'),
+          time: '7 dk',
+          screen: StoryDetailScreen(name: 'Pinokyo'),
         ),
       if (searchQuery.isEmpty ||
           'Küçük Prens'.toLowerCase().contains(searchQuery))
@@ -112,7 +112,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'KP',
           category: 'Öykü',
           color: Colors.blue.shade300,
-          time: '15 dk',
+          time: '8 dk',
           screen: StoryDetailScreen(name: 'Küçük Prens'),
         ),
       if (searchQuery.isEmpty ||
@@ -123,7 +123,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'AH',
           category: 'Fantastik',
           color: Colors.purpleAccent.shade200,
-          time: '22 dk',
+          time: '7 dk',
           screen: StoryDetailScreen(name: 'Alice Harikalar Diyarında'),
         ),
       if (searchQuery.isEmpty ||
@@ -134,7 +134,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'UG',
           category: 'Masal',
           color: Colors.amber.shade300,
-          time: '9 dk',
+          time: '5 dk',
           screen: StoryDetailScreen(name: 'Uyuyan Güzel'),
         ),
       if (searchQuery.isEmpty ||
@@ -145,7 +145,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
           shortDescription: 'MD',
           category: 'Roman',
           color: Colors.teal.shade300,
-          time: '45 dk',
+          time: '10 dk',
           screen: StoryDetailScreen(name: 'Moby Dick'),
         ),
     ];
