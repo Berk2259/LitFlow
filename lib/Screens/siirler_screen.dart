@@ -85,7 +85,7 @@ class SiirlerScreen extends StatelessWidget {
             ),
             KategoriContainer(
               title: 'Ayrılık',
-              icon: 'assets/icons/broken.png',
+              icon: 'assets/icons/broken-heart.png',
               description: 'Ayrılık Şiirlerini görüntülemek için tıklayın',
               color: Colors.teal.shade300,
               onfunction: () {
@@ -130,7 +130,7 @@ class SiirlerScreen extends StatelessWidget {
             ),
             KategoriContainer(
               title: 'Dostluk',
-              icon: 'assets/icons/friend.png',
+              icon: 'assets/icons/support.png',
               description: 'Dostluk Şiirlerini görüntülemek için tıklayın',
               color: Colors.amber.shade300,
               onfunction: () {
@@ -145,7 +145,7 @@ class SiirlerScreen extends StatelessWidget {
             ),
             KategoriContainer(
               title: 'Doğa',
-              icon: 'assets/icons/nature.png',
+              icon: 'assets/icons/leaf.png',
               description: 'Doğa Şiirlerini görüntülemek için tıklayın',
               color: Colors.green.shade300,
               onfunction: () {
@@ -159,7 +159,7 @@ class SiirlerScreen extends StatelessWidget {
             ),
             KategoriContainer(
               title: 'Umut',
-              icon: 'assets/icons/hope.png',
+              icon: 'assets/icons/wishes.png',
               description: 'Umut Şiirlerini görüntülemek için tıklayın',
               color: Colors.purple.shade300,
               onfunction: () {

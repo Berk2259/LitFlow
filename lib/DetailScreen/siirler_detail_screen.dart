@@ -134,7 +134,7 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                                 ),
                                 SizedBox(width: 10),
                                 Image.asset(
-                                  'assets/icons/book.png',
+                                  'assets/icons/open-book.png',
                                   scale: 18,
                                   color: siir.color,
                                 ),

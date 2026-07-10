@@ -81,7 +81,7 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/icons/soz.png', scale: 18),
+                        child: Image.asset('assets/icons/inverted-commas.png', scale: 18),
                       ),
                     ),
                   ),
@@ -173,7 +173,7 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                                         title: ozlu_sozler.text,
                                         type: 'Söz',
                                         description: ozlu_sozler.author,
-                                        asset: 'assets/icons/soz.png',
+                                        asset: 'assets/icons/inverted-commas.png',
                                         color: Colors.red.shade300.withOpacity(
                                           0.5,
                                         ),

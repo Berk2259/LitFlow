@@ -151,7 +151,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                             title: currentBook.name,
                             type: 'Kitap',
                             description: currentBook.author,
-                            asset: 'assets/icons/bookshelf.png',
+                            asset: 'assets/icons/books.png',
                             color: Colors.purple.shade300.withOpacity(0.5),
                           );
                           if (!mounted) return;
@@ -188,7 +188,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                       Image.asset(
-                        'assets/icons/book.png',
+                        'assets/icons/open-book.png',
                         scale: 18,
                         color: widget.blurColor,
                       ),

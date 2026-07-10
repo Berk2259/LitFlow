@@ -265,7 +265,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                     title: currentStory.name,
                     type: 'Hikaye',
                     description: currentStory.category,
-                    asset: 'assets/icons/story.png',
+                    asset: 'assets/icons/reading-book.png',
                     color: currentStory.color,
                   );
                   if (!mounted) return;

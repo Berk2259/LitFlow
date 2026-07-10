@@ -56,7 +56,7 @@ class SozlerScreen extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/icons/soz.png', scale: 18),
+                        child: Image.asset('assets/icons/inverted-commas.png', scale: 18),
                       ),
                     ),
                   ),
@@ -140,7 +140,7 @@ class SozlerScreen extends StatelessWidget {
             KategoriContainer(
               title: 'Dostluk',
               description: 'Dostluk sözlerini görüntülemek için tıklayın',
-              icon: 'assets/icons/friend.png',
+              icon: 'assets/icons/support.png',
               color: Color(0xFFB895FF),
               onfunction: () {
                 Navigator.push(
@@ -155,7 +155,7 @@ class SozlerScreen extends StatelessWidget {
             KategoriContainer(
               title: 'Film',
               description: 'Film sözlerini görüntülemek için tıklayın',
-              icon: 'assets/icons/film.png',
+              icon: 'assets/icons/clapperboard.png',
               color: Color(0xFFFF5599),
               onfunction: () {
                 Navigator.push(

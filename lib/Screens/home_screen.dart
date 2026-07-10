@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lirica/Screens/hakkinda_screen.dart';
 import 'package:lirica/Screens/screens.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       PopularContainer(
                         title: 'Sözler',
                         description: 'Özlü Sözler',
-                        icon: 'assets/icons/soz.png',
+                        icon: 'assets/icons/inverted-commas.png',
                         iconColor: Colors.red.shade300,
                         screen: SozlerScreen(),
                       ),
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       PopularContainer(
                         title: 'Kitaplar',
                         description: 'Kitap Listesi',
-                        icon: 'assets/icons/bookshelf.png',
+                        icon: 'assets/icons/books.png',
                         iconColor: Colors.purple.shade300,
                         screen: BookScreen(),
                       ),
@@ -141,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Sözler',
                     description: 'Sözleri görüntülemek için tıklayın',
                     iconColor: Colors.red.shade300,
-                    icon: 'assets/icons/soz.png',
+                    icon: 'assets/icons/inverted-commas.png',
                     onfunction: () {
                       Navigator.push(
                         context,
@@ -187,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Hikayeler',
                     description: 'Hikayeleri görüntülemek için tıklayın',
                     iconColor: Colors.blue.shade300,
-                    icon: 'assets/icons/story.png',
+                    icon: 'assets/icons/reading-book.png',
                     onfunction: () {
                       Navigator.push(
                         context,
@@ -202,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Kitaplar',
                     description: 'Hikayeleri görüntülemek için tıklayın',
                     iconColor: Colors.purple.shade300,
-                    icon: 'assets/icons/bookshelf.png',
+                    icon: 'assets/icons/books.png',
                     onfunction: () {
                       Navigator.push(
                         context,
@@ -240,6 +241,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => FavoriteScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                if (searchQuery.isEmpty || 'hakkında'.contains(searchQuery))
+                  HomeContainer(
+                    title: 'Hakkında',
+                    description:
+                        'Uygulama hakkında bilgi için tıklayın',
+                    iconColor: Colors.blue.shade200,
+                    icon: 'assets/icons/information.png',
+                    onfunction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HakkindaScreen(),
                         ),
                       );
                     },

@@ -312,7 +312,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                   screen: StoryCategoryScreen(category: 'Macera'),
                 ),
                 CategoryContainer(
-                  icon: 'assets/icons/fantastic.png',
+                  icon: 'assets/icons/magic-lamp.png',
                   title: 'Fantastik',
                   description: 'Hayal Gücüne Yolculuk',
                   color: Colors.purple.shade300,

@@ -59,7 +59,7 @@ class BookScreen extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Image.asset(
-                            'assets/icons/bookshelf.png',
+                            'assets/icons/books.png',
                             scale: 18,
                           ),
                         ),
@@ -70,7 +70,7 @@ class BookScreen extends StatelessWidget {
               ),
               Divider(endIndent: 16, indent: 16, thickness: 1),
               BookContainer(
-                icon: 'assets/icons/detective.png',
+                icon: 'assets/icons/private-detective.png',
                 title: 'Polisiye',
                 iconColor: Colors.indigo.shade400,
                 onfunction: () {
@@ -80,7 +80,7 @@ class BookScreen extends StatelessWidget {
                       builder: (context) => BookDetailScreen(
                         category: 'Polisiye',
                         themeColor: Colors.indigoAccent,
-                        icon: 'assets/icons/detective.png',
+                        icon: 'assets/icons/private-detective.png',
                         blurColor: Colors.indigo.shade400,
                       ),
                     ),
@@ -106,7 +106,7 @@ class BookScreen extends StatelessWidget {
                 },
               ),
               BookContainer(
-                icon: 'assets/icons/sci-fic.png',
+                icon: 'assets/icons/alien.png',
                 title: 'Bilim Kurgu',
                 iconColor: Colors.lightBlueAccent.shade200,
                 onfunction: () {
@@ -116,7 +116,7 @@ class BookScreen extends StatelessWidget {
                       builder: (context) => BookDetailScreen(
                         category: 'Bilim Kurgu',
                         themeColor: Colors.lightBlueAccent,
-                        icon: 'assets/icons/sci-fic.png',
+                        icon: 'assets/icons/alien.png',
                         blurColor: Colors.lightBlueAccent.shade200,
                       ),
                     ),
@@ -216,7 +216,7 @@ class BookScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: BookContainer(
-                  icon: 'assets/icons/food.png',
+                  icon: 'assets/icons/diet.png',
                   title: 'Yemek',
                   iconColor: Colors.orange.shade300,
                   onfunction: () {
@@ -226,7 +226,7 @@ class BookScreen extends StatelessWidget {
                         builder: (context) => BookDetailScreen(
                           category: 'Yemek',
                           themeColor: Colors.orange,
-                          icon: 'assets/icons/food.png',
+                          icon: 'assets/icons/diet.png',
                           blurColor: Colors.orange.shade300,
                         ),
                       ),
