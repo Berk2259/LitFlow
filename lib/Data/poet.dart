@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Models/poet.dart';
+import 'package:LitFlow/Models/poet.dart';
 
 List<Poet> poets = [
   Poet(

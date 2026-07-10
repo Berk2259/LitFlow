@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lirica/Screens/hakkinda_screen.dart';
-import 'package:lirica/Screens/screens.dart';
+import 'package:LitFlow/Screens/hakkinda_screen.dart';
+import 'package:LitFlow/Screens/screens.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

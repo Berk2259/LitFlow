@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/sozler.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Data/sozler.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 
 class SozlerDetailScreen extends StatefulWidget {
   final String category;

@@ -280,7 +280,6 @@ class HakkindaScreen extends StatelessWidget {
                                 color: Colors.orange,
                               ),
                               SizedBox(width: 10),
-
                               RichText(
                                 text: TextSpan(
                                   text: 'Flaticon adresini ziyaret et',
@@ -345,6 +344,10 @@ class AttributionRow extends StatelessWidget {
             ),
             TextSpan(
               text: author,
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                
+              ),
               recognizer: TapGestureRecognizer()..onTap = _openLink,
             ),
             TextSpan(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/poet.dart';
-import 'package:lirica/Models/poet.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Data/poet.dart';
+import 'package:LitFlow/Models/poet.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 
 class PoetDetailScreen extends StatefulWidget {
   final String name;

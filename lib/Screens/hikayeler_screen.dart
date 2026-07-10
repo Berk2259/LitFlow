@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/story.dart';
-import 'package:lirica/DetailScreen/story_detail_screen.dart';
+import 'package:LitFlow/Data/story.dart';
+import 'package:LitFlow/DetailScreen/story_detail_screen.dart';
 
 class HikayelerScreen extends StatefulWidget {
   const HikayelerScreen({super.key});

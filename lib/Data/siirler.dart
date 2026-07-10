@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Models/siirler.dart';
+import 'package:LitFlow/Models/siirler.dart';
 
 List<Siirler> siirler = [
   Siirler(

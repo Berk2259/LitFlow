@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/siirler.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Data/siirler.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SiirlerDetailScreen extends StatefulWidget {

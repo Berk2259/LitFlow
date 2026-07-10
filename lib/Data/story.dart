@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Models/story.dart';
+import 'package:LitFlow/Models/story.dart';
 
 List<Story> story = [
   Story(

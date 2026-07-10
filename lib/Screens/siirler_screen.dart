@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/DetailScreen/detail_screen.dart';
-import 'package:lirica/Screens/screens.dart';
+import 'package:LitFlow/DetailScreen/detail_screen.dart';
+import 'package:LitFlow/Screens/screens.dart';
 
 class SiirlerScreen extends StatelessWidget {
   const SiirlerScreen({super.key});

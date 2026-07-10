@@ -1,4 +1,4 @@
-import 'package:lirica/Models/book.dart';
+import 'package:LitFlow/Models/book.dart';
 
 List<Book> book = [
   Book(

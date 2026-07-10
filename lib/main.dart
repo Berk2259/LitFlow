@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Screens/screens.dart';
+import 'package:LitFlow/Screens/screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {

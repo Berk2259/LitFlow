@@ -1,4 +1,4 @@
-import 'package:lirica/Models/proverbs.dart';
+import 'package:LitFlow/Models/proverbs.dart';
 
 List<Proverbs> proverbs = [
   // ATASÖZLERİ

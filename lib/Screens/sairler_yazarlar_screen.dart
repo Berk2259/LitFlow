@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/DetailScreen/detail_screen.dart';
+import 'package:LitFlow/DetailScreen/detail_screen.dart';
 
 class SairlerYazarlarScreen extends StatefulWidget {
   const SairlerYazarlarScreen({super.key});

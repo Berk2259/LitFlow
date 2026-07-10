@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/DetailScreen/sozler_detail_screen.dart';
+import 'package:LitFlow/DetailScreen/sozler_detail_screen.dart';
 
 class SozlerScreen extends StatelessWidget {
   const SozlerScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/book.dart';
-import 'package:lirica/Models/book.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Data/book.dart';
+import 'package:LitFlow/Models/book.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 
 class BookDetailScreen extends StatefulWidget {
   final String category;

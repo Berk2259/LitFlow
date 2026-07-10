@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});

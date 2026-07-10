@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Data/proverbs.dart';
-import 'package:lirica/Services/favorite_services.dart';
+import 'package:LitFlow/Data/proverbs.dart';
+import 'package:LitFlow/Services/favorite_services.dart';
 
 class ProverbsScreen extends StatefulWidget {
   const ProverbsScreen({super.key});

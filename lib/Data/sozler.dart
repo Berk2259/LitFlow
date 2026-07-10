@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lirica/Models/sozler.dart';
+import 'package:LitFlow/Models/sozler.dart';
 
 List<Sozler> sozler = [
   Sozler(
