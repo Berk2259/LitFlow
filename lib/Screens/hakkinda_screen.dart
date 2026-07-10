@@ -206,167 +206,105 @@ class HakkindaScreen extends StatelessWidget {
                         ),
                         Divider(indent: 16, endIndent: 16),
                         AttributionRow(
-                          icon: 'advanture.png',
                           author: 'Freepik',
                           url: 'https://www.flaticon.com/authors/freepik',
                         ),
+
                         AttributionRow(
-                          icon: 'ancient.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'open-book.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'books.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'boy.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'broken-heart.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'depression.png',
                           author: 'Afian Rochmah Afif',
                           url:
                               'https://www.flaticon.com/authors/afian-rochmah-afif',
                         ),
+
                         AttributionRow(
-                          icon: 'private-detective.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'dove.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'education.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'fairytale.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'magic-lamp.png',
                           author: 'andinur',
                           url: 'https://www.flaticon.com/authors/andinur',
                         ),
                         AttributionRow(
-                          icon: 'clapperboard.png',
                           author: 'HJ Studio',
                           url: 'https://www.flaticon.com/authors/hj-studio',
                         ),
+
                         AttributionRow(
-                          icon: 'diet.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'supoort.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'heart.png',
                           author: 'Kroffle',
                           url: 'https://www.flaticon.com/authors/kroffle',
                         ),
                         AttributionRow(
-                          icon: 'wishes.png',
                           author: 'anilofex',
                           url: 'https://www.flaticon.com/authors/anilofex',
                         ),
                         AttributionRow(
-                          icon: 'information.png',
                           author: 'Anggara',
                           url: 'https://www.flaticon.com/authors/anggara',
                         ),
                         AttributionRow(
-                          icon: 'lol.png',
                           author: 'justicon',
                           url: 'https://www.flaticon.com/authors/justicon',
                         ),
                         AttributionRow(
-                          icon: 'motivation.png',
                           author: 'pojok d',
                           url: 'https://www.flaticon.com/authors/pojok-d',
                         ),
                         AttributionRow(
-                          icon: 'leaf.png',
                           author: 'Mayor Icons',
                           url: 'https://www.flaticon.com/authors/mayor-icons',
                         ),
                         AttributionRow(
-                          icon: 'novel.png',
                           author: 'Three Musketeers',
                           url:
                               'https://www.flaticon.com/authors/three-musketeers',
                         ),
+
                         AttributionRow(
-                          icon: 'philosopher.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'philosophy.png',
                           author: 'Assia Benkerroum',
                           url:
                               'https://www.flaticon.com/authors/assia-benkerroum',
                         ),
+
                         AttributionRow(
-                          icon: 'pillar.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'poet.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'poetry.png',
                           author: 'Icon Home',
                           url: 'https://www.flaticon.com/authors/icon-home',
                         ),
+
                         AttributionRow(
-                          icon: 'alien.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'inverted-commas.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'inverted-commas.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-                        AttributionRow(
-                          icon: 'reading-book.png',
                           author: 'mangsaabguru',
                           url: 'https://www.flaticon.com/authors/mangsaabguru',
                         ),
-                        AttributionRow(
-                          icon: 'write.png',
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 8, 8, 16),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.open_in_new,
+                                size: 20,
+                                color: Colors.orange,
+                              ),
+                              SizedBox(width: 10),
+
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Flaticon adresini ziyaret et',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.orange,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () async {
+                                      final uri = Uri.parse(
+                                        'https://www.flaticon.com',
+                                      );
+                                      if (await canLaunchUrl(uri)) {
+                                        await launchUrl(
+                                          uri,
+                                          mode: LaunchMode.externalApplication,
+                                        );
+                                      }
+                                    },
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -382,15 +320,10 @@ class HakkindaScreen extends StatelessWidget {
 }
 
 class AttributionRow extends StatelessWidget {
-  final String icon;
   final String author;
   final String url;
 
-  const AttributionRow({
-    required this.icon,
-    required this.author,
-    required this.url,
-  });
+  const AttributionRow({required this.author, required this.url});
 
   Future<void> _openLink() async {
     final uri = Uri.parse(url);
@@ -406,15 +339,24 @@ class AttributionRow extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           children: [
-            TextSpan(text: icon),
-            TextSpan(text: ' made by '),
+            TextSpan(
+              text: 'Icons made by ',
+              style: TextStyle(color: Colors.grey),
+            ),
             TextSpan(
               text: author,
               recognizer: TapGestureRecognizer()..onTap = _openLink,
             ),
-            TextSpan(text: ' From '),
+            TextSpan(
+              text: ' from ',
+              style: TextStyle(color: Colors.grey),
+            ),
             TextSpan(
               text: 'www.flaticon.com',
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                color: Colors.lightBlue,
+              ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () async {
                   final uri = Uri.parse('https://www.flaticon.com');
