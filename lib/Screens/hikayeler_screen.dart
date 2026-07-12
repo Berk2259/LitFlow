@@ -201,7 +201,7 @@ class _HikayelerScreenState extends State<HikayelerScreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
-                              'assets/icons/story.png',
+                              'assets/icons/reading-book.png',
                               scale: 18,
                             ),
                           ),

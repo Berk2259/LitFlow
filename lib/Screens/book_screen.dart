@@ -88,7 +88,7 @@ class BookScreen extends StatelessWidget {
                 },
               ),
               BookContainer(
-                icon: 'assets/icons/fantastic.png',
+                icon: 'assets/icons/magic-lamp.png',
                 title: 'Fantastik',
                 iconColor: Colors.purple.shade300,
                 onfunction: () {
@@ -98,7 +98,7 @@ class BookScreen extends StatelessWidget {
                       builder: (context) => BookDetailScreen(
                         category: 'Fantastik',
                         themeColor: Colors.purple,
-                        icon: 'assets/icons/fantastic.png',
+                        icon: 'assets/icons/magic-lamp.png',
                         blurColor: Colors.purple.shade300,
                       ),
                     ),
