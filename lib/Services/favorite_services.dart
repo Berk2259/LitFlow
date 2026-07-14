@@ -41,7 +41,7 @@ class FavoritesService {
       "title": title,
       "type": type,
       "description": description,
-      if (asset != null) "asset": asset,
+      "asset": asset,
       if (color != null) "color": color.value,
     });
 
@@ -69,7 +69,7 @@ class FavoritesService {
       "type": type,
       "description": description,
 
-      if (asset != null) "asset": asset,
+      "asset": asset,
       if (color != null) "color": color.value,
     });
 
@@ -89,7 +89,7 @@ class FavoritesService {
           f["title"] == title &&
           f["description"] == description &&
           f["type"] == type &&
-          (asset == null || f["asset"] == asset) &&
+          (f["asset"] == asset) &&
           (color == null ||
               (f["color"] is Color &&
                   (f["color"] as Color).value == color.value)),

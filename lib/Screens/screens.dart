@@ -6,3 +6,6 @@ export 'hikayeler_screen.dart';
 export 'book_screen.dart';
 export 'proverbs_screen.dart';
 export 'favorite_screen.dart';
+export 'hakkinda_screen.dart';
+export 'icon_hakkinda_screen.dart';
+export 'uygulama_hakkinda_screen.dart';

@@ -1,9 +1,25 @@
+import 'package:LitFlow/Screens/gizlilik_politikasi_screen.dart';
+import 'package:LitFlow/Screens/screens.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HakkindaScreen extends StatelessWidget {
   const HakkindaScreen({super.key});
+  void mailGonder(String email, {String subject = '', String body = ''}) async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: email,
+      query:
+          'subject=${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
+    );
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    } else {
+      throw 'E-posta gönderilemiyor: $emailUri';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,192 +138,62 @@ class HakkindaScreen extends StatelessWidget {
                   'İkon ve görsel kaynakları',
                   style: TextStyle(color: Colors.grey, fontSize: 12),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xFF1E1E1E),
-                      border: Border.all(
-                        color: Colors.white.withOpacity(0.07),
-                        width: 1,
+                HakkindaContainer(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => IconHakkindaScreen(),
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 8,
-                          offset: Offset(0, 6),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.teal.withOpacity(0.2),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(
-                                    Icons.info_outline,
-                                    color: Colors.teal,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8),
-                              child: Text('Flaticon İkonları'),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                          child: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text:
-                                      'Bu uygulamada kullanılan ikonların bazıları ',
-                                ),
-                                TextSpan(
-                                  text: 'www.flaticon.com',
-                                  style: TextStyle(
-                                    color: Colors.lightBlue,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () async {
-                                      final uri = Uri.parse(
-                                        'https://www.flaticon.com',
-                                      );
-                                      if (await canLaunchUrl(uri)) {
-                                        await launchUrl(
-                                          uri,
-                                          mode: LaunchMode.externalApplication,
-                                        );
-                                      }
-                                    },
-                                ),
-                                const TextSpan(
-                                  text:
-                                      ' adresinden alınmıştır ve ilgili tasarımcılara aittir.',
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Divider(indent: 16, endIndent: 16),
-                        AttributionRow(
-                          author: 'Freepik',
-                          url: 'https://www.flaticon.com/authors/freepik',
-                        ),
-
-                        AttributionRow(
-                          author: 'Afian Rochmah Afif',
-                          url:
-                              'https://www.flaticon.com/authors/afian-rochmah-afif',
-                        ),
-
-                        AttributionRow(
-                          author: 'andinur',
-                          url: 'https://www.flaticon.com/authors/andinur',
-                        ),
-                        AttributionRow(
-                          author: 'HJ Studio',
-                          url: 'https://www.flaticon.com/authors/hj-studio',
-                        ),
-
-                        AttributionRow(
-                          author: 'Kroffle',
-                          url: 'https://www.flaticon.com/authors/kroffle',
-                        ),
-                        AttributionRow(
-                          author: 'anilofex',
-                          url: 'https://www.flaticon.com/authors/anilofex',
-                        ),
-                        AttributionRow(
-                          author: 'Anggara',
-                          url: 'https://www.flaticon.com/authors/anggara',
-                        ),
-                        AttributionRow(
-                          author: 'justicon',
-                          url: 'https://www.flaticon.com/authors/justicon',
-                        ),
-                        AttributionRow(
-                          author: 'pojok d',
-                          url: 'https://www.flaticon.com/authors/pojok-d',
-                        ),
-                        AttributionRow(
-                          author: 'Mayor Icons',
-                          url: 'https://www.flaticon.com/authors/mayor-icons',
-                        ),
-                        AttributionRow(
-                          author: 'Three Musketeers',
-                          url:
-                              'https://www.flaticon.com/authors/three-musketeers',
-                        ),
-
-                        AttributionRow(
-                          author: 'Assia Benkerroum',
-                          url:
-                              'https://www.flaticon.com/authors/assia-benkerroum',
-                        ),
-
-                        AttributionRow(
-                          author: 'Icon Home',
-                          url: 'https://www.flaticon.com/authors/icon-home',
-                        ),
-
-                        AttributionRow(
-                          author: 'mangsaabguru',
-                          url: 'https://www.flaticon.com/authors/mangsaabguru',
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 8, 8, 16),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.open_in_new,
-                                size: 20,
-                                color: Colors.orange,
-                              ),
-                              SizedBox(width: 10),
-                              RichText(
-                                text: TextSpan(
-                                  text: 'Flaticon adresini ziyaret et',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.orange,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () async {
-                                      final uri = Uri.parse(
-                                        'https://www.flaticon.com',
-                                      );
-                                      if (await canLaunchUrl(uri)) {
-                                        await launchUrl(
-                                          uri,
-                                          mode: LaunchMode.externalApplication,
-                                        );
-                                      }
-                                    },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                    );
+                  },
+                  title: 'Flaticon İkonları',
+                  icon: Icons.info_outline,
+                  iconColor: Colors.teal,
+                  description1: 'Bu uygulamada kullanılan ikonların bazıları ',
+                  link: 'www.flaticon.com',
+                  description2:
+                      ' adresinden alınmıştır ve ilgili tasarımcılara aittir.',
+                ),
+                HakkindaContainer(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UygulamaHakkindaScreen(),
+                      ),
+                    );
+                  },
+                  title: 'LitFlow Hakkında',
+                  icon: Icons.auto_stories,
+                  iconColor: Colors.red,
+                  description1:
+                      'Şiirler, hikâyeler, kitaplar ve daha fazlası tek bir uygulamada.',
+                ),
+                HakkindaContainer(
+                  onTap: () {
+                   mailGonder(dotenv.env['mailAdress']!);
+                  },
+                  title: 'İletişim',
+                  icon: Icons.mail,
+                  iconColor: Colors.purple,
+                  description1:
+                      'Öneri ve şikayetleriniz için bizimle iletişime geçin',
+                ),
+                HakkindaContainer(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GizlilikPolitikasiScreen(),
+                      ),
+                    );
+                  },
+                  title: 'Gizlilik',
+                  icon: Icons.shield,
+                  iconColor: Colors.blue,
+                  description1:
+                      'Uygulamanın gizlilik politikasını görüntüleyin.',
                 ),
               ],
             ),
@@ -318,57 +204,117 @@ class HakkindaScreen extends StatelessWidget {
   }
 }
 
-class AttributionRow extends StatelessWidget {
-  final String author;
-  final String url;
-
-  const AttributionRow({required this.author, required this.url});
-
-  Future<void> _openLink() async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
-  }
+class HakkindaContainer extends StatelessWidget {
+  final VoidCallback onTap;
+  final String title;
+  final IconData icon;
+  final Color iconColor;
+  final String description1;
+  final String? description2;
+  final String? link;
+  const HakkindaContainer({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.icon,
+    required this.iconColor,
+    required this.description1,
+    this.description2,
+    this.link,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsGeometry.fromLTRB(16, 4, 0, 4),
-      child: RichText(
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: 'Icons made by ',
-              style: TextStyle(color: Colors.grey),
-            ),
-            TextSpan(
-              text: author,
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                
+      padding: const EdgeInsets.only(top: 8),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Color(0xFF1E1E1E),
+            border: Border.all(color: Colors.white.withOpacity(0.07), width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                offset: Offset(0, 6),
               ),
-              recognizer: TapGestureRecognizer()..onTap = _openLink,
-            ),
-            TextSpan(
-              text: ' from ',
-              style: TextStyle(color: Colors.grey),
-            ),
-            TextSpan(
-              text: 'www.flaticon.com',
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                color: Colors.lightBlue,
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: iconColor.withOpacity(0.2),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(icon, color: iconColor, size: 30),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(title, style: TextStyle(fontSize: 16)),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(text: description1),
+                                      TextSpan(
+                                        text: link,
+                                        style: TextStyle(
+                                          color: Colors.lightBlue,
+                                          decoration: TextDecoration.underline,
+                                        ),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () async {
+                                            final uri = Uri.parse(
+                                              'https://www.flaticon.com',
+                                            );
+                                            if (await canLaunchUrl(uri)) {
+                                              await launchUrl(
+                                                uri,
+                                                mode: LaunchMode
+                                                    .externalApplication,
+                                              );
+                                            }
+                                          },
+                                      ),
+                                      TextSpan(text: description2),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: Icon(Icons.arrow_right),
+                  ),
+                ],
               ),
-              recognizer: TapGestureRecognizer()
-                ..onTap = () async {
-                  final uri = Uri.parse('https://www.flaticon.com');
-                  if (await canLaunchUrl(uri)) {
-                    await launchUrl(uri, mode: LaunchMode.externalApplication);
-                  }
-                },
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
