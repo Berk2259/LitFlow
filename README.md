@@ -39,63 +39,119 @@ Lirica'nın amacı, kullanıcıya sadece söz göstermek değil; kısa ama anlam
   <tr>
     <td align="center">
       <b>Ana Sayfası</b><br><br>
-      <img src="./screenshots/HomeScreen.png" width="220">
+      <img src="./screenshots/HomeScreen.jpeg" width="220">
     </td>
     <td align="center">
       <b>Sözler Kategori Sayfası</b><br><br>
-      <img src="./screenshots/WordsCategoryScreen.png" width="220">
+      <img src="./screenshots/WordsCategoryScreen.jpeg" width="220">
     </td>
     <td align="center">
       <b>Sözler Sayfası</b><br><br>
-      <img src="./screenshots/WordsDetailScreen.png" width="220">
+      <img src="./screenshots/WordsDetailScreen.jpeg" width="220">
     </td>
     <td align="center">
       <b>Şiirler Kategori Sayfası</b><br><br>
-      <img src="./screenshots/PoetryCategoryScreen.png" width="220">
+      <img src="./screenshots/PoetryCategoryScreen.jpeg" width="220">
     </td>
   </tr>
     <tr>
     <td align="center">
       <b>Şiirler Sayfası</b><br><br>
-      <img src="./screenshots/PoetryDetailScreen.png" width="220">
+      <img src="./screenshots/PoetryDetailScreen.jpeg" width="220">
     </td>
     <td align="center">
       <b>Şairler Ve Yazarlar Sayfası</b><br><br>
-      <img src="./screenshots/PoetScreen.png" width="220">
+      <img src="./screenshots/PoetScreen1.jpeg" width="220">
     </td>
      <td align="center">
       <b>Şairler Ve Yazarlar Detay Sayfası</b><br><br>
-      <img src="./screenshots/PoetDetailScreen.png" width="220">
+      <img src="./screenshots/PoetScreen2.jpeg" width="220">
     </td>
     <td align="center">
       <b>Hikaye Sayfası</b><br><br>
-      <img src="./screenshots/StoryScreen.png" width="220">
+      <img src="./screenshots/PoetDetailScreen1.jpeg" width="220">
     </td>
   </tr>
+   <tr>
+    <td align="center">
+      <b>Şiirler Sayfası</b><br><br>
+      <img src="./screenshots/PoetDetailScreen2.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Şairler Ve Yazarlar Sayfası</b><br><br>
+      <img src="./screenshots/PoetDetailScreen3.jpeg" width="220">
+    </td>
+     <td align="center">
+      <b>Şairler Ve Yazarlar Detay Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreen1.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Hikaye Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreen2.jpeg" width="220">
+    </td>
+  </tr>
+    <tr>
+    <td align="center">
+      <b>Şiirler Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreen3.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Şairler Ve Yazarlar Sayfası</b><br><br>
+      <img src="./screenshots/StoryScreenDetail.jpeg" width="220">
+    </td>
+     <td align="center">
+      <b>Şairler Ve Yazarlar Detay Sayfası</b><br><br>
+      <img src="./screenshots/BookScreen.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Hikaye Sayfası</b><br><br>
+      <img src="./screenshots/BookScreenDetail.jpeg" width="220">
+    </td>
+  </tr>
+
 
   <tr>
     <td align="center">
       <b>Hikaye Detay Sayfası</b><br><br>
-      <img src="./screenshots/StoryScreenDetail.png" width="220">
+      <img src="./screenshots/ProverbScreen1.jpeg" width="220">
     </td>
       <td align="center">
       <b>Kitaplar Kategori Sayfası</b><br><br>
-      <img src="./screenshots/BookScreen.png" width="220">
+      <img src="./screenshots/ProverbScreen2.jpeg" width="220">
     </td>
     <td align="center">
       <b>Kitaplar Detay Sayfası</b><br><br>
-      <img src="./screenshots/BookScreenDetail.png" width="220">
+      <img src="./screenshots/ProverbScreen3.jpeg" width="220">
     </td>
     <td align="center">
       <b>Deyimler Ve Atasözleri Sayfası</b><br><br>
-      <img src="./screenshots/ProverbScreen.png" width="220">
+      <img src="./screenshots/FavoriteScreen1.jpeg" width="220">
     </td>
   </tr>
 
-  <tr>
+   <tr>
     <td align="center">
-      <b>Favori Sayfası</b><br><br>
-      <img src="./screenshots/FavoriteScreen.png" width="220">
+      <b>Hikaye Detay Sayfası</b><br><br>
+      <img src="./screenshots/FavoriteScreen2.jpeg" width="220">
+    </td>
+      <td align="center">
+      <b>Kitaplar Kategori Sayfası</b><br><br>
+      <img src="./screenshots/AboutScreen1.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Kitaplar Detay Sayfası</b><br><br>
+      <img src="./screenshots/AboutScreen2.jpeg" width="220">
+    </td>
+    <td align="center">
+      <b>Deyimler Ve Atasözleri Sayfası</b><br><br>
+      <img src="./screenshots/AboutScreen3.jpeg" width="220">
+    </td>
+  </tr>
+
+   <tr>
+    <td align="center">
+      <b>Hikaye Detay Sayfası</b><br><br>
+      <img src="./screenshots/AboutScreen4.jpeg" width="220">
     </td>
   </tr>
 </table>
