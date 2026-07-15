@@ -174,9 +174,7 @@ class _SozlerDetailScreenState extends State<SozlerDetailScreen> {
                                         type: 'Söz',
                                         description: ozlu_sozler.author,
                                         asset: 'assets/icons/inverted-commas.png',
-                                        color: Colors.red.shade300.withOpacity(
-                                          0.5,
-                                        ),
+                                        color: ozlu_sozler.color
                                       );
                                       if (!mounted) return;
                                       await loadFavorites();

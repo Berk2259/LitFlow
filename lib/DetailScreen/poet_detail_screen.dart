@@ -142,6 +142,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              SizedBox(height: 10),
                               Text(
                                 poet.description,
                                 style: TextStyle(color: Colors.grey),
@@ -154,43 +155,57 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                               SizedBox(height: 10),
                               Row(
                                 children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: poet.color,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                        left: 16.0,
-                                        right: 16.0,
-                                        top: 2,
-                                        bottom: 2,
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                          color: poet.color,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            left: 16.0,
+                                            right: 16.0,
+                                            top: 2,
+                                            bottom: 2,
+                                          ),
+                                          child: Text(
+                                            poet.category,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      child: Text(
-                                        poet.category,
-                                        style: TextStyle(color: Colors.white),
+                                      SizedBox(height: 10),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                          color: Colors.grey.shade600,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            left: 16.0,
+                                            right: 16.0,
+                                            top: 2,
+                                            bottom: 2,
+                                          ),
+                                          child: Text(
+                                            poet.job,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                  SizedBox(width: 10),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.grey.shade600,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                        left: 16.0,
-                                        right: 16.0,
-                                        top: 2,
-                                        bottom: 2,
-                                      ),
-                                      child: Text(
-                                        poet.job,
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
+
                                   SizedBox(width: 10),
 
                                   Expanded(
@@ -200,8 +215,7 @@ class _PoetDetailScreenState extends State<PoetDetailScreen> {
                                           title: poet.name,
                                           type: 'Şair',
                                           asset: 'assets/icons/poet.png',
-                                          color: Colors.green.shade300
-                                              .withOpacity(0.5),
+                                          color: poet.color,
                                           description: poet.description,
                                         );
 

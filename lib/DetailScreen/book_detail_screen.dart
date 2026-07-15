@@ -152,7 +152,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                             type: 'Kitap',
                             description: currentBook.author,
                             asset: 'assets/icons/books.png',
-                            color: Colors.purple.shade300.withOpacity(0.5),
+                            color: widget.themeColor
                           );
                           if (!mounted) return;
                           await loadFavorites();

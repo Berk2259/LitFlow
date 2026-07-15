@@ -182,9 +182,7 @@ class _SiirlerDetailScreenState extends State<SiirlerDetailScreen> {
                                       title: siir.title,
                                       type: 'Şiir',
                                       asset: 'assets/icons/poetry.png',
-                                      color: Colors.amber.shade300.withOpacity(
-                                        0.5,
-                                      ),
+                                      color: siir.color,
                                       description: siir.author,
                                     );
 
